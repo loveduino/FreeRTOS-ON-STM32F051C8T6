@@ -1,0 +1,400 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.40.3.8902/W32 for ARM        03/May/2017  13:42:11
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\Common\Minimal\semtest.c
+#    Command line =  
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\Common\Minimal\semtest.c
+#        -D VECT_TAB_FLASH -D IAR_ARM_CM3 -lcN
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\Debug\List\
+#        --diag_suppress Pa082,pe191 -o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\Debug\Obj\
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "D:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench 7.2\arm\INC\c\DLib_Config_Full.h"
+#        -I
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\.\
+#        -I
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\STM32F10xFWLib\inc\
+#        -I
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\..\..\Source\include\
+#        -I
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\..\common\include\
+#        -Ol --use_c++_inline --require_prototypes
+#    List file    =  
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\Debug\List\semtest.lst
+#    Object file  =  
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\Debug\Obj\semtest.o
+#
+###############################################################################
+
+E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\Common\Minimal\semtest.c
+      1          /*
+      2              FreeRTOS V9.0.0 - Copyright (C) 2016 Real Time Engineers Ltd.
+      3              All rights reserved
+      4          
+      5              VISIT http://www.FreeRTOS.org TO ENSURE YOU ARE USING THE LATEST VERSION.
+      6          
+      7              This file is part of the FreeRTOS distribution.
+      8          
+      9              FreeRTOS is free software; you can redistribute it and/or modify it under
+     10              the terms of the GNU General Public License (version 2) as published by the
+     11              Free Software Foundation >>>> AND MODIFIED BY <<<< the FreeRTOS exception.
+     12          
+     13              ***************************************************************************
+     14              >>!   NOTE: The modification to the GPL is included to allow you to     !<<
+     15              >>!   distribute a combined work that includes FreeRTOS without being   !<<
+     16              >>!   obliged to provide the source code for proprietary components     !<<
+     17              >>!   outside of the FreeRTOS kernel.                                   !<<
+     18              ***************************************************************************
+     19          
+     20              FreeRTOS is distributed in the hope that it will be useful, but WITHOUT ANY
+     21              WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+     22              FOR A PARTICULAR PURPOSE.  Full license text is available on the following
+     23              link: http://www.freertos.org/a00114.html
+     24          
+     25              ***************************************************************************
+     26               *                                                                       *
+     27               *    FreeRTOS provides completely free yet professionally developed,    *
+     28               *    robust, strictly quality controlled, supported, and cross          *
+     29               *    platform software that is more than just the market leader, it     *
+     30               *    is the industry's de facto standard.                               *
+     31               *                                                                       *
+     32               *    Help yourself get started quickly while simultaneously helping     *
+     33               *    to support the FreeRTOS project by purchasing a FreeRTOS           *
+     34               *    tutorial book, reference manual, or both:                          *
+     35               *    http://www.FreeRTOS.org/Documentation                              *
+     36               *                                                                       *
+     37              ***************************************************************************
+     38          
+     39              http://www.FreeRTOS.org/FAQHelp.html - Having a problem?  Start by reading
+     40              the FAQ page "My application does not run, what could be wrong?".  Have you
+     41              defined configASSERT()?
+     42          
+     43              http://www.FreeRTOS.org/support - In return for receiving this top quality
+     44              embedded software for free we request you assist our global community by
+     45              participating in the support forum.
+     46          
+     47              http://www.FreeRTOS.org/training - Investing in training allows your team to
+     48              be as productive as possible as early as possible.  Now you can receive
+     49              FreeRTOS training directly from Richard Barry, CEO of Real Time Engineers
+     50              Ltd, and the world's leading authority on the world's leading RTOS.
+     51          
+     52              http://www.FreeRTOS.org/plus - A selection of FreeRTOS ecosystem products,
+     53              including FreeRTOS+Trace - an indispensable productivity tool, a DOS
+     54              compatible FAT file system, and our tiny thread aware UDP/IP stack.
+     55          
+     56              http://www.FreeRTOS.org/labs - Where new FreeRTOS products go to incubate.
+     57              Come and try FreeRTOS+TCP, our new open source TCP/IP stack for FreeRTOS.
+     58          
+     59              http://www.OpenRTOS.com - Real Time Engineers ltd. license FreeRTOS to High
+     60              Integrity Systems ltd. to sell under the OpenRTOS brand.  Low cost OpenRTOS
+     61              licenses offer ticketed support, indemnification and commercial middleware.
+     62          
+     63              http://www.SafeRTOS.com - High Integrity Systems also provide a safety
+     64              engineered and independently SIL3 certified version for use in safety and
+     65              mission critical applications that require provable dependability.
+     66          
+     67              1 tab == 4 spaces!
+     68          */
+     69          
+     70          /*
+     71           * Creates two sets of two tasks.  The tasks within a set share a variable, access
+     72           * to which is guarded by a semaphore.
+     73           *
+     74           * Each task starts by attempting to obtain the semaphore.  On obtaining a
+     75           * semaphore a task checks to ensure that the guarded variable has an expected
+     76           * value.  It then clears the variable to zero before counting it back up to the
+     77           * expected value in increments of 1.  After each increment the variable is checked
+     78           * to ensure it contains the value to which it was just set. When the starting
+     79           * value is again reached the task releases the semaphore giving the other task in
+     80           * the set a chance to do exactly the same thing.  The starting value is high
+     81           * enough to ensure that a tick is likely to occur during the incrementing loop.
+     82           *
+     83           * An error is flagged if at any time during the process a shared variable is
+     84           * found to have a value other than that expected.  Such an occurrence would
+     85           * suggest an error in the mutual exclusion mechanism by which access to the
+     86           * variable is restricted.
+     87           *
+     88           * The first set of two tasks poll their semaphore.  The second set use blocking
+     89           * calls.
+     90           *
+     91           */
+     92          
+     93          
+     94          #include <stdlib.h>
+     95          
+     96          /* Scheduler include files. */
+     97          #include "FreeRTOS.h"
+     98          #include "task.h"
+     99          #include "semphr.h"
+    100          
+    101          /* Demo app include files. */
+    102          #include "semtest.h"
+    103          
+    104          /* The value to which the shared variables are counted. */
+    105          #define semtstBLOCKING_EXPECTED_VALUE		( ( uint32_t ) 0xfff )
+    106          #define semtstNON_BLOCKING_EXPECTED_VALUE	( ( uint32_t ) 0xff  )
+    107          
+    108          #define semtstSTACK_SIZE			configMINIMAL_STACK_SIZE
+    109          
+    110          #define semtstNUM_TASKS				( 4 )
+    111          
+    112          #define semtstDELAY_FACTOR			( ( TickType_t ) 10 )
+    113          
+    114          /* The task function as described at the top of the file. */
+    115          static portTASK_FUNCTION_PROTO( prvSemaphoreTest, pvParameters );
+    116          
+    117          /* Structure used to pass parameters to each task. */
+    118          typedef struct SEMAPHORE_PARAMETERS
+    119          {
+    120          	SemaphoreHandle_t xSemaphore;
+    121          	volatile uint32_t *pulSharedVariable;
+    122          	TickType_t xBlockTime;
+    123          } xSemaphoreParameters;
+    124          
+    125          /* Variables used to check that all the tasks are still running without errors. */
+    126          static volatile short sCheckVariables[ semtstNUM_TASKS ] = { 0 };
+    127          static volatile short sNextCheckVariable = 0;
+    128          
+    129          /*-----------------------------------------------------------*/
+    130          
+    131          void vStartSemaphoreTasks( UBaseType_t uxPriority )
+    132          {
+    133          xSemaphoreParameters *pxFirstSemaphoreParameters, *pxSecondSemaphoreParameters;
+    134          const TickType_t xBlockTime = ( TickType_t ) 100;
+    135          
+    136          	/* Create the structure used to pass parameters to the first two tasks. */
+    137          	pxFirstSemaphoreParameters = ( xSemaphoreParameters * ) pvPortMalloc( sizeof( xSemaphoreParameters ) );
+    138          
+    139          	if( pxFirstSemaphoreParameters != NULL )
+    140          	{
+    141          		/* Create the semaphore used by the first two tasks. */
+    142          		pxFirstSemaphoreParameters->xSemaphore = xSemaphoreCreateBinary();		
+    143          
+    144          		if( pxFirstSemaphoreParameters->xSemaphore != NULL )
+    145          		{
+    146          			xSemaphoreGive( pxFirstSemaphoreParameters->xSemaphore );
+    147          			
+    148          			/* Create the variable which is to be shared by the first two tasks. */
+    149          			pxFirstSemaphoreParameters->pulSharedVariable = ( uint32_t * ) pvPortMalloc( sizeof( uint32_t ) );
+    150          
+    151          			/* Initialise the share variable to the value the tasks expect. */
+    152          			*( pxFirstSemaphoreParameters->pulSharedVariable ) = semtstNON_BLOCKING_EXPECTED_VALUE;
+    153          
+    154          			/* The first two tasks do not block on semaphore calls. */
+    155          			pxFirstSemaphoreParameters->xBlockTime = ( TickType_t ) 0;
+    156          
+    157          			/* Spawn the first two tasks.  As they poll they operate at the idle priority. */
+    158          			xTaskCreate( prvSemaphoreTest, "PolSEM1", semtstSTACK_SIZE, ( void * ) pxFirstSemaphoreParameters, tskIDLE_PRIORITY, ( TaskHandle_t * ) NULL );
+    159          			xTaskCreate( prvSemaphoreTest, "PolSEM2", semtstSTACK_SIZE, ( void * ) pxFirstSemaphoreParameters, tskIDLE_PRIORITY, ( TaskHandle_t * ) NULL );
+    160          
+    161          			/* vQueueAddToRegistry() adds the semaphore to the registry, if one
+    162          			is in use.  The registry is provided as a means for kernel aware
+    163          			debuggers to locate semaphores and has no purpose if a kernel aware
+    164          			debugger is not being used.  The call to vQueueAddToRegistry() will
+    165          			be removed by the pre-processor if configQUEUE_REGISTRY_SIZE is not
+    166          			defined or is defined to be less than 1. */
+    167          			vQueueAddToRegistry( ( QueueHandle_t ) pxFirstSemaphoreParameters->xSemaphore, "Counting_Sem_1" );
+    168          		}
+    169          	}
+    170          
+    171          	/* Do exactly the same to create the second set of tasks, only this time
+    172          	provide a block time for the semaphore calls. */
+    173          	pxSecondSemaphoreParameters = ( xSemaphoreParameters * ) pvPortMalloc( sizeof( xSemaphoreParameters ) );
+    174          	if( pxSecondSemaphoreParameters != NULL )
+    175          	{
+    176          		pxSecondSemaphoreParameters->xSemaphore = xSemaphoreCreateBinary();		
+    177          
+    178          		if( pxSecondSemaphoreParameters->xSemaphore != NULL )
+    179          		{
+    180          			xSemaphoreGive( pxSecondSemaphoreParameters->xSemaphore );
+    181          			
+    182          			pxSecondSemaphoreParameters->pulSharedVariable = ( uint32_t * ) pvPortMalloc( sizeof( uint32_t ) );
+    183          			*( pxSecondSemaphoreParameters->pulSharedVariable ) = semtstBLOCKING_EXPECTED_VALUE;
+    184          			pxSecondSemaphoreParameters->xBlockTime = xBlockTime / portTICK_PERIOD_MS;
+    185          
+    186          			xTaskCreate( prvSemaphoreTest, "BlkSEM1", semtstSTACK_SIZE, ( void * ) pxSecondSemaphoreParameters, uxPriority, ( TaskHandle_t * ) NULL );
+    187          			xTaskCreate( prvSemaphoreTest, "BlkSEM2", semtstSTACK_SIZE, ( void * ) pxSecondSemaphoreParameters, uxPriority, ( TaskHandle_t * ) NULL );
+    188          
+    189          			/* vQueueAddToRegistry() adds the semaphore to the registry, if one
+    190          			is in use.  The registry is provided as a means for kernel aware
+    191          			debuggers to locate semaphores and has no purpose if a kernel aware
+    192          			debugger is not being used.  The call to vQueueAddToRegistry() will
+    193          			be removed by the pre-processor if configQUEUE_REGISTRY_SIZE is not
+    194          			defined or is defined to be less than 1. */
+    195          			vQueueAddToRegistry( ( QueueHandle_t ) pxSecondSemaphoreParameters->xSemaphore, "Counting_Sem_2" );
+    196          		}
+    197          	}
+    198          }
+    199          /*-----------------------------------------------------------*/
+    200          
+    201          static portTASK_FUNCTION( prvSemaphoreTest, pvParameters )
+    202          {
+    203          xSemaphoreParameters *pxParameters;
+    204          volatile uint32_t *pulSharedVariable, ulExpectedValue;
+    205          uint32_t ulCounter;
+    206          short sError = pdFALSE, sCheckVariableToUse;
+    207          
+    208          	/* See which check variable to use.  sNextCheckVariable is not semaphore
+    209          	protected! */
+    210          	portENTER_CRITICAL();
+    211          		sCheckVariableToUse = sNextCheckVariable;
+    212          		sNextCheckVariable++;
+    213          	portEXIT_CRITICAL();
+    214          
+    215          	/* A structure is passed in as the parameter.  This contains the shared
+    216          	variable being guarded. */
+    217          	pxParameters = ( xSemaphoreParameters * ) pvParameters;
+    218          	pulSharedVariable = pxParameters->pulSharedVariable;
+    219          
+    220          	/* If we are blocking we use a much higher count to ensure loads of context
+    221          	switches occur during the count. */
+    222          	if( pxParameters->xBlockTime > ( TickType_t ) 0 )
+    223          	{
+    224          		ulExpectedValue = semtstBLOCKING_EXPECTED_VALUE;
+    225          	}
+    226          	else
+    227          	{
+    228          		ulExpectedValue = semtstNON_BLOCKING_EXPECTED_VALUE;
+    229          	}
+    230          
+    231          	for( ;; )
+    232          	{
+    233          		/* Try to obtain the semaphore. */
+    234          		if( xSemaphoreTake( pxParameters->xSemaphore, pxParameters->xBlockTime ) == pdPASS )
+    235          		{
+    236          			/* We have the semaphore and so expect any other tasks using the
+    237          			shared variable to have left it in the state we expect to find
+    238          			it. */
+    239          			if( *pulSharedVariable != ulExpectedValue )
+    240          			{
+    241          				sError = pdTRUE;
+    242          			}
+    243          
+    244          			/* Clear the variable, then count it back up to the expected value
+    245          			before releasing the semaphore.  Would expect a context switch or
+    246          			two during this time. */
+    247          			for( ulCounter = ( uint32_t ) 0; ulCounter <= ulExpectedValue; ulCounter++ )
+    248          			{
+    249          				*pulSharedVariable = ulCounter;
+    250          				if( *pulSharedVariable != ulCounter )
+    251          				{
+    252          					sError = pdTRUE;
+    253          				}
+    254          			}
+    255          
+    256          			/* Release the semaphore, and if no errors have occurred increment the check
+    257          			variable. */
+    258          			if(	xSemaphoreGive( pxParameters->xSemaphore ) == pdFALSE )
+    259          			{
+    260          				sError = pdTRUE;
+    261          			}
+    262          
+    263          			if( sError == pdFALSE )
+    264          			{
+    265          				if( sCheckVariableToUse < semtstNUM_TASKS )
+    266          				{
+    267          					( sCheckVariables[ sCheckVariableToUse ] )++;
+    268          				}
+    269          			}
+    270          
+    271          			/* If we have a block time then we are running at a priority higher
+    272          			than the idle priority.  This task takes a long time to complete
+    273          			a cycle	(deliberately so to test the guarding) so will be starving
+    274          			out lower priority tasks.  Block for some time to allow give lower
+    275          			priority tasks some processor time. */
+    276          			vTaskDelay( pxParameters->xBlockTime * semtstDELAY_FACTOR );
+    277          		}
+    278          		else
+    279          		{
+    280          			if( pxParameters->xBlockTime == ( TickType_t ) 0 )
+    281          			{
+    282          				/* We have not got the semaphore yet, so no point using the
+    283          				processor.  We are not blocking when attempting to obtain the
+    284          				semaphore. */
+    285          				taskYIELD();
+    286          			}
+    287          		}
+    288          	}
+    289          }
+    290          /*-----------------------------------------------------------*/
+    291          
+    292          /* This is called to check that all the created tasks are still running. */
+    293          BaseType_t xAreSemaphoreTasksStillRunning( void )
+    294          {
+    295          static short sLastCheckVariables[ semtstNUM_TASKS ] = { 0 };
+    296          BaseType_t xTask, xReturn = pdTRUE;
+    297          
+    298          	for( xTask = 0; xTask < semtstNUM_TASKS; xTask++ )
+    299          	{
+    300          		if( sLastCheckVariables[ xTask ] == sCheckVariables[ xTask ] )
+    301          		{
+    302          			xReturn = pdFALSE;
+    303          		}
+    304          
+    305          		sLastCheckVariables[ xTask ] = sCheckVariables[ xTask ];
+    306          	}
+    307          
+    308          	return xReturn;
+    309          }
+    310          
+    311          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      24   prvSemaphoreTest
+        24   -> vPortEnterCritical
+        24   -> vPortExitCritical
+        24   -> vTaskDelay
+        24   -> xQueueGenericReceive
+        24   -> xQueueGenericSend
+      24   vStartSemaphoreTasks
+        24   -> pvPortMalloc
+        24   -> xQueueGenericCreate
+        24   -> xQueueGenericSend
+        24   -> xTaskCreate
+       0   xAreSemaphoreTasksStillRunning
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable2_2
+       4  ??DataTable2_3
+       4  ??DataTable2_4
+       4  ??DataTable2_5
+       4  ??DataTable2_6
+       4  ??DataTable2_7
+       8  ?_0
+       8  ?_1
+       8  ?_2
+       8  ?_3
+     182  prvSemaphoreTest
+       8  sCheckVariables
+       8  sLastCheckVariables
+       2  sNextCheckVariable
+     218  vStartSemaphoreTasks
+      44  xAreSemaphoreTasksStillRunning
+
+ 
+  18 bytes in section .bss
+  32 bytes in section .rodata
+ 476 bytes in section .text
+ 
+ 476 bytes of CODE  memory
+  32 bytes of CONST memory
+  18 bytes of DATA  memory
+
+Errors: none
+Warnings: none

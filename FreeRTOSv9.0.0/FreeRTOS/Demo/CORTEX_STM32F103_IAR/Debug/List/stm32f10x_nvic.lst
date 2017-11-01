@@ -1,0 +1,913 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.40.3.8902/W32 for ARM        03/May/2017  13:42:11
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\STM32F10xFWLib\src\stm32f10x_nvic.c
+#    Command line =  
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\STM32F10xFWLib\src\stm32f10x_nvic.c
+#        -D VECT_TAB_FLASH -D IAR_ARM_CM3 -lcN
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\Debug\List\
+#        --diag_suppress Pa082,pe191 -o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\Debug\Obj\
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "D:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench 7.2\arm\INC\c\DLib_Config_Full.h"
+#        -I
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\.\
+#        -I
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\STM32F10xFWLib\inc\
+#        -I
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\..\..\Source\include\
+#        -I
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\..\common\include\
+#        -Ol --use_c++_inline --require_prototypes
+#    List file    =  
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\Debug\List\stm32f10x_nvic.lst
+#    Object file  =  
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\Debug\Obj\stm32f10x_nvic.o
+#
+###############################################################################
+
+E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\STM32F10xFWLib\src\stm32f10x_nvic.c
+      1          /******************** (C) COPYRIGHT 2007 STMicroelectronics ********************
+      2          * File Name          : stm32f10x_nvic.c
+      3          * Author             : MCD Application Team
+      4          * Date First Issued  : 09/29/2006
+      5          * Description        : This file provides all the NVIC firmware functions.
+      6          ********************************************************************************
+      7          * History:
+      8          * 04/02/2007: V0.2
+      9          * 02/05/2007: V0.1
+     10          * 09/29/2006: V0.01
+     11          ********************************************************************************
+     12          * THE PRESENT SOFTWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+     13          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     14          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     15          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     16          * CONTENT OF SUCH SOFTWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     17          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     18          *******************************************************************************/
+     19          
+     20          /* Includes ------------------------------------------------------------------*/
+     21          #include "stm32f10x_nvic.h"
+     22          
+     23          /* Private typedef -----------------------------------------------------------*/
+     24          /* Private define ------------------------------------------------------------*/
+     25          #define AIRC_VECTKEY_MASK    ((u32)0x05FA0000)
+     26          
+     27          /* Private macro -------------------------------------------------------------*/
+     28          /* Private variables ---------------------------------------------------------*/
+     29          /* Private function prototypes -----------------------------------------------*/
+     30          /* Private functions ---------------------------------------------------------*/
+     31          
+     32          /*******************************************************************************
+     33          * Function Name  : NVIC_DeInit
+     34          * Description    : Deinitializes the NVIC peripheral registers to their default
+     35          *                  reset values.
+     36          * Input          : None
+     37          * Output         : None
+     38          * Return         : None
+     39          *******************************************************************************/
+     40          void NVIC_DeInit(void)
+     41          {
+     42            u32 index = 0;
+     43            
+     44            NVIC->Disable[0] = 0xFFFFFFFF;
+     45            NVIC->Disable[1] = 0x000007FF;
+     46            NVIC->Clear[0] = 0xFFFFFFFF;
+     47            NVIC->Clear[1] = 0x000007FF;
+     48            
+     49            for(index = 0; index < 0x0B; index++)
+     50            {
+     51               NVIC->Priority[index] = 0x00000000;
+     52            } 
+     53          }
+     54          
+     55          /*******************************************************************************
+     56          * Function Name  : NVIC_SCBDeInit
+     57          * Description    : Deinitializes the SCB peripheral registers to their default 
+     58          *                  reset values.
+     59          * Input          : None
+     60          * Output         : None
+     61          * Return         : None
+     62          *******************************************************************************/
+     63          void NVIC_SCBDeInit(void)
+     64          {
+     65            u32 index = 0x00;
+     66            
+     67            SCB->IRQControlState = 0x0A000000;
+     68            SCB->ExceptionTableOffset = 0x00000000;
+     69            SCB->AIRC = AIRC_VECTKEY_MASK;
+     70            SCB->SysCtrl = 0x00000000;
+     71            SCB->ConfigCtrl = 0x00000000;
+     72            for(index = 0; index < 0x03; index++)
+     73            {
+     74               SCB->SystemPriority[index] = 0;
+     75            }
+     76            SCB->SysHandlerCtrl = 0x00000000;
+     77            SCB->ConfigFaultStatus = 0xFFFFFFFF;
+     78            SCB->HardFaultStatus = 0xFFFFFFFF;
+     79            SCB->DebugFaultStatus = 0xFFFFFFFF;
+     80          }
+     81          
+     82          /*******************************************************************************
+     83          * Function Name  : NVIC_PriorityGroupConfig
+     84          * Description    : Configures the priority grouping: pre-emption priority
+     85          *                  and subpriority.
+     86          * Input          : - NVIC_PriorityGroup: specifies the priority grouping bits
+     87          *                    length. This parameter can be one of the following values:
+     88          *                       - NVIC_PriorityGroup_0: 0 bits for pre-emption priority
+     89          *                         4 bits for subpriority
+     90          *                       - NVIC_PriorityGroup_1: 1 bits for pre-emption priority
+     91          *                         3 bits for subpriority
+     92          *                       - NVIC_PriorityGroup_2: 2 bits for pre-emption priority
+     93          *                         2 bits for subpriority
+     94          *                       - NVIC_PriorityGroup_3: 3 bits for pre-emption priority
+     95          *                         1 bits for subpriority
+     96          *                       - NVIC_PriorityGroup_4: 4 bits for pre-emption priority
+     97          *                         0 bits for subpriority
+     98          * Output         : None
+     99          * Return         : None
+    100          *******************************************************************************/
+    101          void NVIC_PriorityGroupConfig(u32 NVIC_PriorityGroup)
+    102          {
+    103            /* Check the parameters */
+    104            assert(IS_NVIC_PRIORITY_GROUP(NVIC_PriorityGroup));
+    105            
+    106            /* Set the PRIGROUP[10:8] bits according to NVIC_PriorityGroup value */
+    107            SCB->AIRC = AIRC_VECTKEY_MASK | NVIC_PriorityGroup;
+    108          }
+    109          
+    110          /*******************************************************************************
+    111          * Function Name  : NVIC_Init
+    112          * Description    : Initializes the NVIC peripheral according to the specified
+    113          *                  parameters in the NVIC_InitStruct.
+    114          * Input          : - NVIC_InitStruct: pointer to a NVIC_InitTypeDef structure
+    115          *                    that contains the configuration information for the
+    116          *                    specified NVIC peripheral.
+    117          * Output         : None
+    118          * Return         : None
+    119          *******************************************************************************/
+    120          void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct)
+    121          {
+    122            u32 tmppriority = 0x00, tmpreg = 0x00, tmpmask = 0x00;
+    123            u32 tmppre = 0, tmpsub = 0x0F;
+    124          
+    125            /* Check the parameters */
+    126            assert(IS_FUNCTIONAL_STATE(NVIC_InitStruct->NVIC_IRQChannelCmd));
+    127            assert(IS_NVIC_IRQ_CHANNEL(NVIC_InitStruct->NVIC_IRQChannel));
+    128            assert(IS_NVIC_PREEMPTION_PRIORITY(NVIC_InitStruct->NVIC_IRQChannelPreemptionPriority));  
+    129            assert(IS_NVIC_SUB_PRIORITY(NVIC_InitStruct->NVIC_IRQChannelSubPriority));
+    130              
+    131            if (NVIC_InitStruct->NVIC_IRQChannelCmd != DISABLE)
+    132            {
+    133              /* Compute the Corresponding IRQ Priority --------------------------------*/    
+    134              tmppriority = (0x700 - (SCB->AIRC & (u32)0x700))>> 0x08;
+    135              tmppre = (0x4 - tmppriority);
+    136              tmpsub = tmpsub >> tmppriority;
+    137              
+    138              tmppriority = (u32)NVIC_InitStruct->NVIC_IRQChannelPreemptionPriority << tmppre;
+    139              tmppriority |=  NVIC_InitStruct->NVIC_IRQChannelSubPriority & tmpsub;
+    140          
+    141              tmppriority = tmppriority << 0x04;
+    142              tmppriority = ((u32)tmppriority) << ((NVIC_InitStruct->NVIC_IRQChannel & (u8)0x03) * 0x08);
+    143              
+    144              tmpreg = NVIC->Priority[(NVIC_InitStruct->NVIC_IRQChannel >> 0x02)];
+    145              tmpmask = (u32)0xFF << ((NVIC_InitStruct->NVIC_IRQChannel & (u8)0x03) * 0x08);
+    146              tmpreg &= ~tmpmask;
+    147              tmppriority &= tmpmask;  
+    148              tmpreg |= tmppriority;
+    149          
+    150              NVIC->Priority[(NVIC_InitStruct->NVIC_IRQChannel >> 0x02)] = tmpreg;
+    151              
+    152              /* Enable the Selected IRQ Channels --------------------------------------*/
+    153              NVIC->Enable[(NVIC_InitStruct->NVIC_IRQChannel >> 0x05)] =
+    154                (u32)0x01 << (NVIC_InitStruct->NVIC_IRQChannel & (u8)0x1F);
+    155            }
+    156            else
+    157            {
+    158              /* Disable the Selected IRQ Channels -------------------------------------*/
+    159              NVIC->Disable[(NVIC_InitStruct->NVIC_IRQChannel >> 0x05)] =
+    160                (u32)0x01 << (NVIC_InitStruct->NVIC_IRQChannel & (u8)0x1F);
+    161            }
+    162          }
+    163          
+    164          /*******************************************************************************
+    165          * Function Name  : NVIC_StructInit
+    166          * Description    : Fills each NVIC_InitStruct member with its default value.
+    167          * Input          : - NVIC_InitStruct: pointer to a NVIC_InitTypeDef structure which
+    168          *                    will be initialized.
+    169          * Output         : None
+    170          * Return         : None
+    171          *******************************************************************************/
+    172          void NVIC_StructInit(NVIC_InitTypeDef* NVIC_InitStruct)
+    173          {
+    174            /* NVIC_InitStruct members default value */
+    175            NVIC_InitStruct->NVIC_IRQChannel = 0x00;
+    176            NVIC_InitStruct->NVIC_IRQChannelPreemptionPriority = 0x00;
+    177            NVIC_InitStruct->NVIC_IRQChannelSubPriority = 0x00;
+    178            NVIC_InitStruct->NVIC_IRQChannelCmd = DISABLE;
+    179          }
+    180          
+    181          /*******************************************************************************
+    182          * Function Name  : NVIC_SETPRIMASK
+    183          * Description    : Enables the PRIMASK priority: Raises the execution priority to 0.
+    184          * Input          : None
+    185          * Output         : None
+    186          * Return         : None
+    187          *******************************************************************************/
+    188          void NVIC_SETPRIMASK(void)
+    189          {
+    190            __SETPRIMASK();
+    191          }
+    192          
+    193          /*******************************************************************************
+    194          * Function Name  : NVIC_RESETPRIMASK
+    195          * Description    : Disables the PRIMASK priority.
+    196          * Input          : None
+    197          * Output         : None
+    198          * Return         : None
+    199          *******************************************************************************/
+    200          void NVIC_RESETPRIMASK(void)
+    201          {
+    202            __RESETPRIMASK();
+    203          }
+    204          
+    205          /*******************************************************************************
+    206          * Function Name  : NVIC_SETFAULTMASK
+    207          * Description    : Enables the FAULTMASK priority: Raises the execution priority to -1.
+    208          * Input          : None
+    209          * Output         : None
+    210          * Return         : None
+    211          *******************************************************************************/
+    212          void NVIC_SETFAULTMASK(void)
+    213          {
+    214            __SETFAULTMASK();
+    215          }
+    216          
+    217          /*******************************************************************************
+    218          * Function Name  : NVIC_RESETFAULTMASK
+    219          * Description    : Disables the FAULTMASK priority.
+    220          * Input          : None
+    221          * Output         : None
+    222          * Return         : None
+    223          *******************************************************************************/
+    224          void NVIC_RESETFAULTMASK(void)
+    225          {
+    226            __RESETFAULTMASK();
+    227          }
+    228          
+    229          /*******************************************************************************
+    230          * Function Name  : NVIC_BASEPRICONFIG
+    231          * Description    : The execution priority can be changed from 15 (lowest 
+    232                             configurable priority) to 1.
+    233          * Input          : None
+    234          * Output         : None
+    235          * Return         : None
+    236          *******************************************************************************/
+    237          void NVIC_BASEPRICONFIG(u32 NewPriority)
+    238          {
+    239            /* Check the parameters */
+    240            assert(IS_NVIC_BASE_PRI(NewPriority));
+    241            
+    242            __BASEPRICONFIG(NewPriority << 0x04);
+    243          }
+    244          
+    245          /*******************************************************************************
+    246          * Function Name  : NVIC_GetBASEPRI
+    247          * Description    : Returns the BASEPRI mask value.
+    248          * Input          : None
+    249          * Output         : None
+    250          * Return         : BASEPRI register value
+    251          *******************************************************************************/
+    252          u32 NVIC_GetBASEPRI(void)
+    253          {
+    254            return (__GetBASEPRI());
+    255          }
+    256          
+    257          /*******************************************************************************
+    258          * Function Name  : NVIC_GetCurrentPendingIRQChannel
+    259          * Description    : Returns the current pending IRQ channel identifier.
+    260          * Input          : None
+    261          * Output         : None
+    262          * Return         : Pending IRQ Channel Identifier.
+    263          *******************************************************************************/
+    264          u16 NVIC_GetCurrentPendingIRQChannel(void)
+    265          {
+    266            return ((u16)((SCB->IRQControlState & (u32)0x003FF000) >> 0x0C));
+    267          }
+    268          
+    269          /*******************************************************************************
+    270          * Function Name  : NVIC_GetIRQChannelPendingBitStatus
+    271          * Description    : Checks whether the specified IRQ Channel pending bit is set
+    272          *                  or not.
+    273          * Input          : - NVIC_IRQChannel: specifies the interrupt pending bit to check.
+    274          * Output         : None
+    275          * Return         : The new state of IRQ Channel pending bit(SET or RESET).
+    276          *******************************************************************************/
+    277          ITStatus NVIC_GetIRQChannelPendingBitStatus(u8 NVIC_IRQChannel)
+    278          {
+    279            ITStatus pendingirqstatus = RESET;
+    280            u32 tmp = 0x00;
+    281            
+    282            /* Check the parameters */
+    283            assert(IS_NVIC_IRQ_CHANNEL(NVIC_IRQChannel));
+    284            
+    285            tmp = ((u32)0x01 << (NVIC_IRQChannel & (u32)0x1F));
+    286          
+    287            if (((NVIC->Set[(NVIC_IRQChannel >> 0x05)]) & tmp) == tmp)
+    288            {
+    289              pendingirqstatus = SET;
+    290            }
+    291            else
+    292            {
+    293              pendingirqstatus = RESET;
+    294            }
+    295            return pendingirqstatus;
+    296          }
+    297          
+    298          /*******************************************************************************
+    299          * Function Name  : NVIC_SetIRQChannelPendingBit
+    300          * Description    : Sets the NVIC抯 interrupt pending bit.
+    301          * Input          : - NVIC_IRQChannel: specifies the interrupt pending bit to Set.
+    302          * Output         : None
+    303          * Return         : None
+    304          *******************************************************************************/
+    305          void NVIC_SetIRQChannelPendingBit(u8 NVIC_IRQChannel)
+    306          {
+    307            /* Check the parameters */
+    308            assert(IS_NVIC_IRQ_CHANNEL(NVIC_IRQChannel));
+    309            
+    310            *(u32*)0xE000EF00 = (u32)NVIC_IRQChannel;
+    311          }
+    312          
+    313          /*******************************************************************************
+    314          * Function Name  : NVIC_ClearIRQChannelPendingBit
+    315          * Description    : Clears the NVIC抯 interrupt pending bit.
+    316          * Input          : - NVIC_IRQChannel: specifies the interrupt pending bit to clear.
+    317          * Output         : None
+    318          * Return         : None
+    319          *******************************************************************************/
+    320          void NVIC_ClearIRQChannelPendingBit(u8 NVIC_IRQChannel)
+    321          {
+    322            /* Check the parameters */
+    323            assert(IS_NVIC_IRQ_CHANNEL(NVIC_IRQChannel));
+    324            
+    325            NVIC->Clear[(NVIC_IRQChannel >> 0x05)] = (u32)0x01 << (NVIC_IRQChannel & (u32)0x1F);
+    326          }
+    327          
+    328          /*******************************************************************************
+    329          * Function Name  : NVIC_GetCurrentActiveHandler
+    330          * Description    : Returns the current active Handler (IRQ Channel and
+    331          *                  SystemHandler) identifier.
+    332          * Input          : None
+    333          * Output         : None
+    334          * Return         : Active Handler Identifier.
+    335          *******************************************************************************/
+    336          u16 NVIC_GetCurrentActiveHandler(void)
+    337          {
+    338            return ((u16)(SCB->IRQControlState & (u32)0x3FF));
+    339          }
+    340          
+    341          /*******************************************************************************
+    342          * Function Name  : NVIC_GetIRQChannelActiveBitStatus
+    343          * Description    : Checks whether the specified IRQ Channel active bit is set
+    344          *                  or not.
+    345          * Input          : - NVIC_IRQChannel: specifies the interrupt active bit to check.
+    346          * Output         : None
+    347          * Return         : The new state of IRQ Channel active bit(SET or RESET).
+    348          *******************************************************************************/
+    349          ITStatus NVIC_GetIRQChannelActiveBitStatus(u8 NVIC_IRQChannel)
+    350          {
+    351            ITStatus activeirqstatus = RESET;
+    352            u32 tmp = 0x00;
+    353          
+    354            /* Check the parameters */
+    355            assert(IS_NVIC_IRQ_CHANNEL(NVIC_IRQChannel));
+    356            
+    357            tmp = ((u32)0x01 << (NVIC_IRQChannel & (u32)0x1F));
+    358          
+    359            if (((NVIC->Active[(NVIC_IRQChannel >> 0x05)]) & tmp) == tmp )
+    360            {
+    361              activeirqstatus = SET;
+    362            }
+    363            else
+    364            {
+    365              activeirqstatus = RESET;
+    366            }
+    367            return activeirqstatus;
+    368          }
+    369          
+    370          /*******************************************************************************
+    371          * Function Name  : NVIC_GetCPUID
+    372          * Description    : Returns the ID number, the version number and the implementation
+    373          *                  details of the Cortex-M3 core.
+    374          * Input          : None
+    375          * Output         : None
+    376          * Return         : CPU ID.
+    377          *******************************************************************************/
+    378          u32 NVIC_GetCPUID(void)
+    379          {
+    380            return (SCB->CPUID);
+    381          }
+    382          
+    383          /*******************************************************************************
+    384          * Function Name  : NVIC_SetVectorTable
+    385          * Description    : Sets the vector table location and Offset.
+    386          * Input          : - NVIC_VectTab: specifies if the vector table is in RAM or
+    387          *                    code memory.
+    388          *                    This parameter can be one of the following values:
+    389          *                       - NVIC_VectTab_RAM
+    390          *                       - NVIC_VectTab_FLASH
+    391          *                  - Offset: Vector Table base offset field.
+    392          * Output         : None
+    393          * Return         : None
+    394          *******************************************************************************/
+    395          void NVIC_SetVectorTable(u32 NVIC_VectTab, u32 Offset)
+    396          { 
+    397            /* Check the parameters */
+    398            assert(IS_NVIC_VECTTAB(NVIC_VectTab));
+    399            assert(IS_NVIC_OFFSET(Offset));  
+    400             
+    401            SCB->ExceptionTableOffset = (((u32)Offset << 0x07) & (u32)0x1FFFFF80);
+    402          
+    403            SCB->ExceptionTableOffset |= NVIC_VectTab;
+    404          }
+    405          
+    406          /*******************************************************************************
+    407          * Function Name  : NVIC_GenerateSystemReset
+    408          * Description    : Generates a system reset.
+    409          * Input          : None
+    410          * Output         : None
+    411          * Return         : None
+    412          *******************************************************************************/
+    413          void NVIC_GenerateSystemReset(void)
+    414          {
+    415            SCB->AIRC = AIRC_VECTKEY_MASK | (u32)0x04;
+    416          }
+    417          
+    418          /*******************************************************************************
+    419          * Function Name  : NVIC_GenerateCoreReset
+    420          * Description    : Generates a Core (Core + NVIC) reset.
+    421          * Input          : None
+    422          * Output         : None
+    423          * Return         : None
+    424          *******************************************************************************/
+    425          void NVIC_GenerateCoreReset(void)
+    426          {
+    427            SCB->AIRC = AIRC_VECTKEY_MASK | (u32)0x01;
+    428          }
+    429          
+    430          /*******************************************************************************
+    431          * Function Name  : NVIC_SystemLPConfig
+    432          * Description    : Selects the condition for the system to enter low power mode.
+    433          * Input          : - LowPowerMode: Specifies the new mode for the system to enter
+    434          *                    low power mode.
+    435          *                    This parameter can be one of the following values:
+    436          *                       - NVIC_LP_SEVONPEND
+    437          *                       - NVIC_LP_SLEEPDEEP
+    438          *                       - NVIC_LP_SLEEPONEXIT
+    439          *                  - NewState: new state of LP condition.
+    440          *                    This parameter can be: ENABLE or DISABLE.
+    441          * Output         : None
+    442          * Return         : None
+    443          *******************************************************************************/
+    444          void NVIC_SystemLPConfig(u8 LowPowerMode, FunctionalState NewState)
+    445          {
+    446            /* Check the parameters */
+    447            assert(IS_NVIC_LP(LowPowerMode));
+    448            assert(IS_FUNCTIONAL_STATE(NewState));  
+    449            
+    450            if (NewState != DISABLE)
+    451            {
+    452              SCB->SysCtrl |= LowPowerMode;
+    453            }
+    454            else
+    455            {
+    456              SCB->SysCtrl &= (u32)(~(u32)LowPowerMode);
+    457            }
+    458          }
+    459          
+    460          /*******************************************************************************
+    461          * Function Name  : NVIC_SystemHandlerConfig
+    462          * Description    : Enables or disables the specified System Handlers.
+    463          * Input          : - SystemHandler: specifies the system handler to be enabled
+    464          *                    or disabled.
+    465          *                    This parameter can be one of the following values:
+    466          *                       - SystemHandler_MemoryManage
+    467          *                       - SystemHandler_BusFault
+    468          *                       - SystemHandler_UsageFault
+    469          *                  - NewState: new state of  specified System Handlers.
+    470          *                    This parameter can be: ENABLE or DISABLE.
+    471          * Output         : None
+    472          * Return         : None
+    473          *******************************************************************************/
+    474          void NVIC_SystemHandlerConfig(u32 SystemHandler, FunctionalState NewState)
+    475          {
+    476            u32 tmpreg = 0x00;
+    477          
+    478            /* Check the parameters */
+    479            assert(IS_CONFIG_SYSTEM_HANDLER(SystemHandler));
+    480            assert(IS_FUNCTIONAL_STATE(NewState)); 
+    481            
+    482            tmpreg =  (u32)0x01 << (SystemHandler & (u32)0x1F);
+    483          
+    484            if (NewState != DISABLE)
+    485            {
+    486              SCB->SysHandlerCtrl |= tmpreg;
+    487            }
+    488            else
+    489            {
+    490              SCB->SysHandlerCtrl &= ~tmpreg;
+    491            }
+    492          }
+    493          
+    494          /*******************************************************************************
+    495          * Function Name  : NVIC_SystemHandlerPriorityConfig
+    496          * Description    : Configures the specified System Handlers priority.
+    497          * Input          : - SystemHandler: specifies the system handler to be
+    498          *                    enabled or disabled.
+    499          *                    This parameter can be one of the following values:
+    500          *                       - SystemHandler_MemoryManage
+    501          *                       - SystemHandler_BusFault
+    502          *                       - SystemHandler_UsageFault
+    503          *                       - SystemHandler_SVCall
+    504          *                       - SystemHandler_DebugMonitor
+    505          *                       - SystemHandler_PSV
+    506          *                       - SystemHandler_SysTick
+    507          *                  - SystemHandlerPreemptionPriority: new priority group of the
+    508          *                    specified system handlers.
+    509          *                  - SystemHandlerSubPriority: new sub priority of the specified
+    510          *                    system handlers.
+    511          * Output         : None
+    512          * Return         : None
+    513          *******************************************************************************/
+    514          void NVIC_SystemHandlerPriorityConfig(u32 SystemHandler, u8 SystemHandlerPreemptionPriority,
+    515                                                u8 SystemHandlerSubPriority)
+    516          {
+    517            u32 tmp1 = 0x00, tmp2 = 0xFF, handlermask = 0x00;
+    518            u32 tmppriority = 0x00;
+    519          
+    520            /* Check the parameters */
+    521            assert(IS_PRIORITY_SYSTEM_HANDLER(SystemHandler));
+    522            assert(IS_NVIC_PREEMPTION_PRIORITY(SystemHandlerPreemptionPriority));  
+    523            assert(IS_NVIC_SUB_PRIORITY(SystemHandlerSubPriority));
+    524              
+    525            tmppriority = (0x700 - (SCB->AIRC & (u32)0x700))>> 0x08;
+    526            tmp1 = (0x4 - tmppriority);
+    527            tmp2 = tmp2 >> tmppriority;
+    528              
+    529            tmppriority = (u32)SystemHandlerPreemptionPriority << tmp1;
+    530            tmppriority |=  SystemHandlerSubPriority & tmp2;
+    531          
+    532            tmppriority = tmppriority << 0x04;
+    533            tmp1 = SystemHandler & (u32)0xC0;
+    534            tmp1 = tmp1 >> 0x06; 
+    535            tmp2 = (SystemHandler >> 0x08) & (u32)0x03;
+    536            tmppriority = tmppriority << (tmp2 * 0x08);
+    537            handlermask = (u32)0xFF << (tmp2 * 0x08);
+    538            
+    539            SCB->SystemPriority[tmp1] &= ~handlermask;
+    540            SCB->SystemPriority[tmp1] |= tmppriority;
+    541          }
+    542          
+    543          /*******************************************************************************
+    544          * Function Name  : NVIC_GetSystemHandlerPendingBitStatus
+    545          * Description    : Checks whether the specified System handlers pending bit is
+    546          *                  set or not.
+    547          * Input          : - SystemHandler: specifies the system handler pending bit to
+    548          *                    check.
+    549          *                    This parameter can be one of the following values:
+    550          *                       - SystemHandler_MemoryManage
+    551          *                       - SystemHandler_BusFault
+    552          *                       - SystemHandler_SVCall
+    553          * Output         : None
+    554          * Return         : The new state of System Handler pending bit(SET or RESET).
+    555          *******************************************************************************/
+    556          ITStatus NVIC_GetSystemHandlerPendingBitStatus(u32 SystemHandler)
+    557          {
+    558            ITStatus bitstatus  = RESET;
+    559            u32 tmp = 0x00, tmppos = 0x00;
+    560          
+    561            /* Check the parameters */
+    562            assert(IS_GET_PENDING_SYSTEM_HANDLER(SystemHandler));
+    563            
+    564            tmppos = (SystemHandler >> 0x0A);
+    565            tmppos &= (u32)0x0F;
+    566          
+    567            tmppos = (u32)0x01 << tmppos;
+    568          
+    569            tmp = SCB->SysHandlerCtrl & tmppos;
+    570          
+    571            if (tmp == tmppos)
+    572            {
+    573              bitstatus = SET;
+    574            }
+    575            else
+    576            {
+    577              bitstatus = RESET;
+    578            }
+    579            return bitstatus;
+    580          }
+    581          
+    582          /*******************************************************************************
+    583          * Function Name  : NVIC_SetSystemHandlerPendingBit
+    584          * Description    : Sets System Handler pending bit.
+    585          * Input          : - SystemHandler: specifies the system handler pending bit
+    586          *                    to be set.
+    587          *                    This parameter can be one of the following values:
+    588          *                       - SystemHandler_NMI
+    589          *                       - SystemHandler_PSV
+    590          *                       - SystemHandler_SysTick
+    591          * Output         : None
+    592          * Return         : None
+    593          *******************************************************************************/
+    594          void NVIC_SetSystemHandlerPendingBit(u32 SystemHandler)
+    595          {
+    596            u32 tmp = 0x00;
+    597          
+    598            /* Check the parameters */
+    599            assert(IS_SET_PENDING_SYSTEM_HANDLER(SystemHandler));
+    600            
+    601            /* Get the System Handler pending bit position */
+    602            tmp = SystemHandler & (u32)0x1F;
+    603            /* Set the corresponding System Handler pending bit */
+    604            SCB->IRQControlState |= ((u32)0x01 << tmp);
+    605          }
+    606          
+    607          /*******************************************************************************
+    608          * Function Name  : NVIC_ClearSystemHandlerPendingBit
+    609          * Description    : Clears System Handler pending bit.
+    610          * Input          : - SystemHandler: specifies the system handler pending bit to
+    611          *                    be clear.
+    612          *                    This parameter can be one of the following values:
+    613          *                       - SystemHandler_PSV
+    614          *                       - SystemHandler_SysTick
+    615          * Output         : None
+    616          * Return         : None
+    617          *******************************************************************************/
+    618          void NVIC_ClearSystemHandlerPendingBit(u32 SystemHandler)
+    619          {
+    620            u32 tmp = 0x00;
+    621          
+    622            /* Check the parameters */
+    623            assert(IS_CLEAR_SYSTEM_HANDLER(SystemHandler));
+    624            
+    625            /* Get the System Handler pending bit position */
+    626            tmp = SystemHandler & (u32)0x1F;
+    627            /* Clear the corresponding System Handler pending bit */
+    628            SCB->IRQControlState |= ((u32)0x01 << (tmp - 0x01));
+    629          }
+    630          
+    631          /*******************************************************************************
+    632          * Function Name  : NVIC_GetSystemHandlerActiveBitStatus
+    633          * Description    : Checks whether the specified System handlers active bit is
+    634          *                  set or not.
+    635          * Input          : - SystemHandler: specifies the system handler active bit to
+    636          *                    check.
+    637          *                    This parameter can be one of the following values:
+    638          *                       - SystemHandler_MemoryManage
+    639          *                       - SystemHandler_BusFault
+    640          *                       - SystemHandler_UsageFault
+    641          *                       - SystemHandler_SVCall
+    642          *                       - SystemHandler_DebugMonitor
+    643          *                       - SystemHandler_PSV
+    644          *                       - SystemHandler_SysTick
+    645          * Output         : None
+    646          * Return         : The new state of System Handler active bit(SET or RESET).
+    647          *******************************************************************************/
+    648          ITStatus NVIC_GetSystemHandlerActiveBitStatus(u32 SystemHandler)
+    649          {
+    650            ITStatus bitstatus  = RESET;
+    651          
+    652            u32 tmp = 0x00, tmppos = 0x00;
+    653          
+    654            /* Check the parameters */
+    655            assert(IS_GET_ACTIVE_SYSTEM_HANDLER(SystemHandler));
+    656            
+    657            tmppos = (SystemHandler >> 0x0E) & (u32)0x0F;
+    658          
+    659            tmppos = (u32)0x01 << tmppos;
+    660          
+    661            tmp = SCB->SysHandlerCtrl & tmppos;
+    662          
+    663            if (tmp == tmppos)
+    664            {
+    665              bitstatus = SET;
+    666            }
+    667            else
+    668            {
+    669              bitstatus = RESET;
+    670            }
+    671            return bitstatus;
+    672          }
+    673          
+    674          /*******************************************************************************
+    675          * Function Name  : NVIC_GetFaultHandlerSources
+    676          * Description    : Returns the system fault handlers sources.
+    677          * Input          : - SystemHandler: specifies the system handler to get its fault
+    678          *                    sources.
+    679          *                    This parameter can be one of the following values:
+    680          *                       - SystemHandler_HardFault
+    681          *                       - SystemHandler_MemoryManage
+    682          *                       - SystemHandler_BusFault
+    683          *                       - SystemHandler_UsageFault
+    684          *                       - SystemHandler_DebugMonitor
+    685          * Output         : None
+    686          * Return         : Source of the fault handler.
+    687          *******************************************************************************/
+    688          u32 NVIC_GetFaultHandlerSources(u32 SystemHandler)
+    689          {
+    690            u32 faultsources = 0x00;
+    691            u32 tmpreg = 0x00, tmppos = 0x00;
+    692          
+    693            /* Check the parameters */
+    694            assert(IS_FAULT_SOURCE_SYSTEM_HANDLER(SystemHandler));
+    695            
+    696            tmpreg = (SystemHandler >> 0x12) & (u32)0x03;
+    697            tmppos = (SystemHandler >> 0x14) & (u32)0x03;
+    698          
+    699            if (tmpreg == 0x00)
+    700            {
+    701              faultsources = SCB->HardFaultStatus;
+    702            }
+    703            else if (tmpreg == 0x01)
+    704            {
+    705              faultsources = SCB->ConfigFaultStatus >> (tmppos * 0x08);
+    706              if (tmppos != 0x02)
+    707              {
+    708                faultsources &= (u32)0x0F;
+    709              }
+    710              else
+    711              {
+    712                faultsources &= (u32)0xFF;
+    713              }
+    714            }
+    715            else
+    716            {
+    717              faultsources = SCB->DebugFaultStatus;
+    718            }
+    719            return faultsources;
+    720          }
+    721          
+    722          /*******************************************************************************
+    723          * Function Name  : NVIC_GetFaultAddress
+    724          * Description    : Returns the address of the location that generated a fault
+    725          *                  handler.
+    726          * Input          : - SystemHandler: specifies the system handler to get its
+    727          *                    fault address.
+    728          *                    This parameter can be one of the following values:
+    729          *                       - SystemHandler_MemoryManage
+    730          *                       - SystemHandler_BusFault
+    731          * Output         : None
+    732          * Return         : Fault address.
+    733          *******************************************************************************/
+    734          u32 NVIC_GetFaultAddress(u32 SystemHandler)
+    735          {
+    736            u32 faultaddress = 0x00;
+    737            u32 tmp = 0x00;
+    738          
+    739            /* Check the parameters */
+    740            assert(IS_FAULT_ADDRESS_SYSTEM_HANDLER(SystemHandler));
+    741            
+    742            tmp = (SystemHandler >> 0x16) & (u32)0x01;
+    743          
+    744            if (tmp == 0x00)
+    745            {
+    746              faultaddress = SCB->MemoryManageFaultAddr;
+    747            }
+    748            else
+    749            {
+    750              faultaddress = SCB->BusFaultAddr;
+    751            }
+    752            return faultaddress;
+    753          }
+    754          
+    755          /******************* (C) COPYRIGHT 2007 STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   NVIC_BASEPRICONFIG
+         8   -> __BASEPRICONFIG
+         8   -> assert_failed
+       8   NVIC_ClearIRQChannelPendingBit
+         8   -> assert_failed
+       8   NVIC_ClearSystemHandlerPendingBit
+         8   -> assert_failed
+       0   NVIC_DeInit
+       0   NVIC_GenerateCoreReset
+       0   NVIC_GenerateSystemReset
+       8   NVIC_GetBASEPRI
+         8   -> __GetBASEPRI
+       0   NVIC_GetCPUID
+       0   NVIC_GetCurrentActiveHandler
+       0   NVIC_GetCurrentPendingIRQChannel
+       8   NVIC_GetFaultAddress
+         8   -> assert_failed
+       8   NVIC_GetFaultHandlerSources
+         8   -> assert_failed
+       8   NVIC_GetIRQChannelActiveBitStatus
+         8   -> assert_failed
+       8   NVIC_GetIRQChannelPendingBitStatus
+         8   -> assert_failed
+       8   NVIC_GetSystemHandlerActiveBitStatus
+         8   -> assert_failed
+       8   NVIC_GetSystemHandlerPendingBitStatus
+         8   -> assert_failed
+      16   NVIC_Init
+        16   -> assert_failed
+       8   NVIC_PriorityGroupConfig
+         8   -> assert_failed
+       8   NVIC_RESETFAULTMASK
+         8   -> __RESETFAULTMASK
+       8   NVIC_RESETPRIMASK
+         8   -> __RESETPRIMASK
+       0   NVIC_SCBDeInit
+       8   NVIC_SETFAULTMASK
+         8   -> __SETFAULTMASK
+       8   NVIC_SETPRIMASK
+         8   -> __SETPRIMASK
+       8   NVIC_SetIRQChannelPendingBit
+         8   -> assert_failed
+       8   NVIC_SetSystemHandlerPendingBit
+         8   -> assert_failed
+      16   NVIC_SetVectorTable
+        16   -> assert_failed
+       0   NVIC_StructInit
+      16   NVIC_SystemHandlerConfig
+        16   -> assert_failed
+      24   NVIC_SystemHandlerPriorityConfig
+        24   -> assert_failed
+      16   NVIC_SystemLPConfig
+        16   -> assert_failed
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable20
+       4  ??DataTable21
+       4  ??DataTable22
+       4  ??DataTable23
+       4  ??DataTable23_1
+       4  ??DataTable23_10
+       4  ??DataTable23_11
+       4  ??DataTable23_12
+       4  ??DataTable23_13
+       4  ??DataTable23_2
+       4  ??DataTable23_3
+       4  ??DataTable23_4
+       4  ??DataTable23_5
+       4  ??DataTable23_6
+       4  ??DataTable23_7
+       4  ??DataTable23_8
+       4  ??DataTable23_9
+     164  ?_0
+      30  NVIC_BASEPRICONFIG
+     306  NVIC_ClearIRQChannelPendingBit
+      56  NVIC_ClearSystemHandlerPendingBit
+      86  NVIC_DeInit
+      14  NVIC_GenerateCoreReset
+      14  NVIC_GenerateSystemReset
+       8  NVIC_GetBASEPRI
+      10  NVIC_GetCPUID
+      14  NVIC_GetCurrentActiveHandler
+      16  NVIC_GetCurrentPendingIRQChannel
+      54  NVIC_GetFaultAddress
+     110  NVIC_GetFaultHandlerSources
+     324  NVIC_GetIRQChannelActiveBitStatus
+     324  NVIC_GetIRQChannelPendingBitStatus
+      94  NVIC_GetSystemHandlerActiveBitStatus
+      72  NVIC_GetSystemHandlerPendingBitStatus
+     512  NVIC_Init
+      60  NVIC_PriorityGroupConfig
+       8  NVIC_RESETFAULTMASK
+       8  NVIC_RESETPRIMASK
+     128  NVIC_SCBDeInit
+       8  NVIC_SETFAULTMASK
+       8  NVIC_SETPRIMASK
+     288  NVIC_SetIRQChannelPendingBit
+      58  NVIC_SetSystemHandlerPendingBit
+      80  NVIC_SetVectorTable
+      18  NVIC_StructInit
+     112  NVIC_SystemHandlerConfig
+     216  NVIC_SystemHandlerPriorityConfig
+     106  NVIC_SystemLPConfig
+
+ 
+   164 bytes in section .rodata
+ 3 210 bytes in section .text
+ 
+ 3 210 bytes of CODE  memory
+   164 bytes of CONST memory
+
+Errors: none
+Warnings: none

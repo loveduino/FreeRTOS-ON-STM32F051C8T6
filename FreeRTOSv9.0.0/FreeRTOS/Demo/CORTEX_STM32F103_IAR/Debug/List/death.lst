@@ -1,0 +1,352 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.40.3.8902/W32 for ARM        03/May/2017  13:42:10
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\Common\Minimal\death.c
+#    Command line =  
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\Common\Minimal\death.c
+#        -D VECT_TAB_FLASH -D IAR_ARM_CM3 -lcN
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\Debug\List\
+#        --diag_suppress Pa082,pe191 -o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\Debug\Obj\
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "D:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench 7.2\arm\INC\c\DLib_Config_Full.h"
+#        -I
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\.\
+#        -I
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\STM32F10xFWLib\inc\
+#        -I
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\..\..\Source\include\
+#        -I
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\..\common\include\
+#        -Ol --use_c++_inline --require_prototypes
+#    List file    =  
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\Debug\List\death.lst
+#    Object file  =  
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\Debug\Obj\death.o
+#
+###############################################################################
+
+E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\Common\Minimal\death.c
+      1          /*
+      2              FreeRTOS V9.0.0 - Copyright (C) 2016 Real Time Engineers Ltd.
+      3              All rights reserved
+      4          
+      5              VISIT http://www.FreeRTOS.org TO ENSURE YOU ARE USING THE LATEST VERSION.
+      6          
+      7              This file is part of the FreeRTOS distribution.
+      8          
+      9              FreeRTOS is free software; you can redistribute it and/or modify it under
+     10              the terms of the GNU General Public License (version 2) as published by the
+     11              Free Software Foundation >>>> AND MODIFIED BY <<<< the FreeRTOS exception.
+     12          
+     13              ***************************************************************************
+     14              >>!   NOTE: The modification to the GPL is included to allow you to     !<<
+     15              >>!   distribute a combined work that includes FreeRTOS without being   !<<
+     16              >>!   obliged to provide the source code for proprietary components     !<<
+     17              >>!   outside of the FreeRTOS kernel.                                   !<<
+     18              ***************************************************************************
+     19          
+     20              FreeRTOS is distributed in the hope that it will be useful, but WITHOUT ANY
+     21              WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+     22              FOR A PARTICULAR PURPOSE.  Full license text is available on the following
+     23              link: http://www.freertos.org/a00114.html
+     24          
+     25              ***************************************************************************
+     26               *                                                                       *
+     27               *    FreeRTOS provides completely free yet professionally developed,    *
+     28               *    robust, strictly quality controlled, supported, and cross          *
+     29               *    platform software that is more than just the market leader, it     *
+     30               *    is the industry's de facto standard.                               *
+     31               *                                                                       *
+     32               *    Help yourself get started quickly while simultaneously helping     *
+     33               *    to support the FreeRTOS project by purchasing a FreeRTOS           *
+     34               *    tutorial book, reference manual, or both:                          *
+     35               *    http://www.FreeRTOS.org/Documentation                              *
+     36               *                                                                       *
+     37              ***************************************************************************
+     38          
+     39              http://www.FreeRTOS.org/FAQHelp.html - Having a problem?  Start by reading
+     40              the FAQ page "My application does not run, what could be wrong?".  Have you
+     41              defined configASSERT()?
+     42          
+     43              http://www.FreeRTOS.org/support - In return for receiving this top quality
+     44              embedded software for free we request you assist our global community by
+     45              participating in the support forum.
+     46          
+     47              http://www.FreeRTOS.org/training - Investing in training allows your team to
+     48              be as productive as possible as early as possible.  Now you can receive
+     49              FreeRTOS training directly from Richard Barry, CEO of Real Time Engineers
+     50              Ltd, and the world's leading authority on the world's leading RTOS.
+     51          
+     52              http://www.FreeRTOS.org/plus - A selection of FreeRTOS ecosystem products,
+     53              including FreeRTOS+Trace - an indispensable productivity tool, a DOS
+     54              compatible FAT file system, and our tiny thread aware UDP/IP stack.
+     55          
+     56              http://www.FreeRTOS.org/labs - Where new FreeRTOS products go to incubate.
+     57              Come and try FreeRTOS+TCP, our new open source TCP/IP stack for FreeRTOS.
+     58          
+     59              http://www.OpenRTOS.com - Real Time Engineers ltd. license FreeRTOS to High
+     60              Integrity Systems ltd. to sell under the OpenRTOS brand.  Low cost OpenRTOS
+     61              licenses offer ticketed support, indemnification and commercial middleware.
+     62          
+     63              http://www.SafeRTOS.com - High Integrity Systems also provide a safety
+     64              engineered and independently SIL3 certified version for use in safety and
+     65              mission critical applications that require provable dependability.
+     66          
+     67              1 tab == 4 spaces!
+     68          */
+     69          
+     70          /**
+     71           * Create a single persistent task which periodically dynamically creates another
+     72           * two tasks.  The original task is called the creator task, the two tasks it
+     73           * creates are called suicidal tasks.
+     74           *
+     75           * One of the created suicidal tasks kill one other suicidal task before killing
+     76           * itself - leaving just the original task remaining.
+     77           *
+     78           * The creator task must be spawned after all of the other demo application tasks
+     79           * as it keeps a check on the number of tasks under the scheduler control.  The
+     80           * number of tasks it expects to see running should never be greater than the
+     81           * number of tasks that were in existence when the creator task was spawned, plus
+     82           * one set of four suicidal tasks.  If this number is exceeded an error is flagged.
+     83           *
+     84           * \page DeathC death.c
+     85           * \ingroup DemoFiles
+     86           * <HR>
+     87           */
+     88          
+     89          
+     90          #include <stdlib.h>
+     91          
+     92          /* Scheduler include files. */
+     93          #include "FreeRTOS.h"
+     94          #include "task.h"
+     95          
+     96          /* Demo program include files. */
+     97          #include "death.h"
+     98          
+     99          #define deathSTACK_SIZE		( configMINIMAL_STACK_SIZE + 60 )
+    100          
+    101          /* The task originally created which is responsible for periodically dynamically
+    102          creating another four tasks. */
+    103          static portTASK_FUNCTION_PROTO( vCreateTasks, pvParameters );
+    104          
+    105          /* The task function of the dynamically created tasks. */
+    106          static portTASK_FUNCTION_PROTO( vSuicidalTask, pvParameters );
+    107          
+    108          /* A variable which is incremented every time the dynamic tasks are created.  This
+    109          is used to check that the task is still running. */
+    110          static volatile uint16_t usCreationCount = 0;
+    111          
+    112          /* Used to store the number of tasks that were originally running so the creator
+    113          task can tell if any of the suicidal tasks have failed to die.
+    114          */
+    115          static volatile UBaseType_t uxTasksRunningAtStart = 0;
+    116          
+    117          /* When a task deletes itself, it stack and TCB are cleaned up by the Idle task.
+    118          Under heavy load the idle task might not get much processing time, so it would
+    119          be legitimate for several tasks to remain undeleted for a short period.  There
+    120          may also be a few other unexpected tasks if, for example, the tasks that test
+    121          static allocation are also being used. */
+    122          static const UBaseType_t uxMaxNumberOfExtraTasksRunning = 3;
+    123          
+    124          /* Used to store a handle to the task that should be killed by a suicidal task,
+    125          before it kills itself. */
+    126          TaskHandle_t xCreatedTask;
+    127          
+    128          /*-----------------------------------------------------------*/
+    129          
+    130          void vCreateSuicidalTasks( UBaseType_t uxPriority )
+    131          {
+    132          	xTaskCreate( vCreateTasks, "CREATOR", deathSTACK_SIZE, ( void * ) NULL, uxPriority, NULL );
+    133          
+    134          	/* Record the number of tasks that are running now so we know if any of the
+    135          	suicidal tasks have failed to be killed. */
+    136          	uxTasksRunningAtStart = ( UBaseType_t ) uxTaskGetNumberOfTasks();
+    137          
+    138          	/* FreeRTOS.org versions before V3.0 started the idle-task as the very
+    139          	first task. The idle task was then already included in uxTasksRunningAtStart.
+    140          	From FreeRTOS V3.0 on, the idle task is started when the scheduler is
+    141          	started. Therefore the idle task is not yet accounted for. We correct
+    142          	this by increasing uxTasksRunningAtStart by 1. */
+    143          	uxTasksRunningAtStart++;
+    144          
+    145          	/* From FreeRTOS version 7.0.0 can optionally create a timer service task.
+    146          	If this is done, then uxTasksRunningAtStart needs incrementing again as that
+    147          	too is created when the scheduler is started. */
+    148          	#if configUSE_TIMERS == 1
+    149          	{
+    150          		uxTasksRunningAtStart++;
+    151          	}
+    152          	#endif
+    153          }
+    154          /*-----------------------------------------------------------*/
+    155          
+    156          static portTASK_FUNCTION( vSuicidalTask, pvParameters )
+    157          {
+    158          volatile long l1, l2;
+    159          TaskHandle_t xTaskToKill;
+    160          const TickType_t xDelay = pdMS_TO_TICKS( ( TickType_t ) 200 );
+    161          
+    162          	if( pvParameters != NULL )
+    163          	{
+    164          		/* This task is periodically created four times.  Two created tasks are
+    165          		passed a handle to the other task so it can kill it before killing itself.
+    166          		The other task is passed in null. */
+    167          		xTaskToKill = *( TaskHandle_t* )pvParameters;
+    168          	}
+    169          	else
+    170          	{
+    171          		xTaskToKill = NULL;
+    172          	}
+    173          
+    174          	for( ;; )
+    175          	{
+    176          		/* Do something random just to use some stack and registers. */
+    177          		l1 = 2;
+    178          		l2 = 89;
+    179          		l2 *= l1;
+    180          		vTaskDelay( xDelay );
+    181          
+    182          		if( xTaskToKill != NULL )
+    183          		{
+    184          			/* Make sure the other task has a go before we delete it. */
+    185          			vTaskDelay( ( TickType_t ) 0 );
+    186          
+    187          			/* Kill the other task that was created by vCreateTasks(). */
+    188          			vTaskDelete( xTaskToKill );
+    189          
+    190          			/* Kill ourselves. */
+    191          			vTaskDelete( NULL );
+    192          		}
+    193          	}
+    194          }/*lint !e818 !e550 Function prototype must be as per standard for task functions. */
+    195          /*-----------------------------------------------------------*/
+    196          
+    197          static portTASK_FUNCTION( vCreateTasks, pvParameters )
+    198          {
+    199          const TickType_t xDelay = pdMS_TO_TICKS( ( TickType_t ) 1000 );
+    200          UBaseType_t uxPriority;
+    201          
+    202          	/* Remove compiler warning about unused parameter. */
+    203          	( void ) pvParameters;
+    204          
+    205          	uxPriority = uxTaskPriorityGet( NULL );
+    206          
+    207          	for( ;; )
+    208          	{
+    209          		/* Just loop round, delaying then creating the four suicidal tasks. */
+    210          		vTaskDelay( xDelay );
+    211          
+    212          		xCreatedTask = NULL;
+    213          
+    214          		xTaskCreate( vSuicidalTask, "SUICID1", configMINIMAL_STACK_SIZE, NULL, uxPriority, &xCreatedTask );
+    215          		xTaskCreate( vSuicidalTask, "SUICID2", configMINIMAL_STACK_SIZE, &xCreatedTask, uxPriority, NULL );
+    216          
+    217          		++usCreationCount;
+    218          	}
+    219          }
+    220          /*-----------------------------------------------------------*/
+    221          
+    222          /* This is called to check that the creator task is still running and that there
+    223          are not any more than four extra tasks. */
+    224          BaseType_t xIsCreateTaskStillRunning( void )
+    225          {
+    226          static uint16_t usLastCreationCount = 0xfff;
+    227          BaseType_t xReturn = pdTRUE;
+    228          static UBaseType_t uxTasksRunningNow;
+    229          
+    230          	if( usLastCreationCount == usCreationCount )
+    231          	{
+    232          		xReturn = pdFALSE;
+    233          	}
+    234          	else
+    235          	{
+    236          		usLastCreationCount = usCreationCount;
+    237          	}
+    238          
+    239          	uxTasksRunningNow = ( UBaseType_t ) uxTaskGetNumberOfTasks();
+    240          
+    241          	if( uxTasksRunningNow < uxTasksRunningAtStart )
+    242          	{
+    243          		xReturn = pdFALSE;
+    244          	}
+    245          	else if( ( uxTasksRunningNow - uxTasksRunningAtStart ) > uxMaxNumberOfExtraTasksRunning )
+    246          	{
+    247          		xReturn = pdFALSE;
+    248          	}
+    249          	else
+    250          	{
+    251          		/* Everything is okay. */
+    252          	}
+    253          
+    254          	return xReturn;
+    255          }
+    256          
+    257          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   vCreateSuicidalTasks
+        16   -> uxTaskGetNumberOfTasks
+        16   -> xTaskCreate
+      24   vCreateTasks
+        24   -> uxTaskPriorityGet
+        24   -> vTaskDelay
+        24   -> xTaskCreate
+      24   vSuicidalTask
+        24   -> vTaskDelay
+        24   -> vTaskDelete
+       8   xIsCreateTaskStillRunning
+         8   -> uxTaskGetNumberOfTasks
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable2_2
+       4  ??DataTable2_3
+       4  ??DataTable2_4
+       4  ??DataTable2_5
+       4  ??DataTable2_6
+       4  ??DataTable2_7
+       4  ??DataTable2_8
+       4  ??DataTable2_9
+       8  ?_0
+       8  ?_1
+       8  ?_2
+       2  usCreationCount
+       2  usLastCreationCount
+       4  uxMaxNumberOfExtraTasksRunning
+       4  uxTasksRunningAtStart
+       4  uxTasksRunningNow
+      44  vCreateSuicidalTasks
+      76  vCreateTasks
+      64  vSuicidalTask
+       4  xCreatedTask
+      76  xIsCreateTaskStillRunning
+
+ 
+  14 bytes in section .bss
+   2 bytes in section .data
+  28 bytes in section .rodata
+ 300 bytes in section .text
+ 
+ 300 bytes of CODE  memory
+  28 bytes of CONST memory
+  16 bytes of DATA  memory
+
+Errors: none
+Warnings: none

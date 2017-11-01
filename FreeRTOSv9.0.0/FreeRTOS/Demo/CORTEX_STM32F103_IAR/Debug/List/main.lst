@@ -1,0 +1,638 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.40.3.8902/W32 for ARM        03/May/2017  13:42:10
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\main.c
+#    Command line =  
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\main.c
+#        -D VECT_TAB_FLASH -D IAR_ARM_CM3 -lcN
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\Debug\List\
+#        --diag_suppress Pa082,pe191 -o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\Debug\Obj\
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "D:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench 7.2\arm\INC\c\DLib_Config_Full.h"
+#        -I
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\.\
+#        -I
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\STM32F10xFWLib\inc\
+#        -I
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\..\..\Source\include\
+#        -I
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\..\common\include\
+#        -Ol --use_c++_inline --require_prototypes
+#    List file    =  
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\Debug\List\main.lst
+#    Object file  =  
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\Debug\Obj\main.o
+#
+###############################################################################
+
+E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\main.c
+      1          /*
+      2              FreeRTOS V9.0.0 - Copyright (C) 2016 Real Time Engineers Ltd.
+      3              All rights reserved
+      4          
+      5              VISIT http://www.FreeRTOS.org TO ENSURE YOU ARE USING THE LATEST VERSION.
+      6          
+      7              This file is part of the FreeRTOS distribution.
+      8          
+      9              FreeRTOS is free software; you can redistribute it and/or modify it under
+     10              the terms of the GNU General Public License (version 2) as published by the
+     11              Free Software Foundation >>>> AND MODIFIED BY <<<< the FreeRTOS exception.
+     12          
+     13              ***************************************************************************
+     14              >>!   NOTE: The modification to the GPL is included to allow you to     !<<
+     15              >>!   distribute a combined work that includes FreeRTOS without being   !<<
+     16              >>!   obliged to provide the source code for proprietary components     !<<
+     17              >>!   outside of the FreeRTOS kernel.                                   !<<
+     18              ***************************************************************************
+     19          
+     20              FreeRTOS is distributed in the hope that it will be useful, but WITHOUT ANY
+     21              WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+     22              FOR A PARTICULAR PURPOSE.  Full license text is available on the following
+     23              link: http://www.freertos.org/a00114.html
+     24          
+     25              ***************************************************************************
+     26               *                                                                       *
+     27               *    FreeRTOS provides completely free yet professionally developed,    *
+     28               *    robust, strictly quality controlled, supported, and cross          *
+     29               *    platform software that is more than just the market leader, it     *
+     30               *    is the industry's de facto standard.                               *
+     31               *                                                                       *
+     32               *    Help yourself get started quickly while simultaneously helping     *
+     33               *    to support the FreeRTOS project by purchasing a FreeRTOS           *
+     34               *    tutorial book, reference manual, or both:                          *
+     35               *    http://www.FreeRTOS.org/Documentation                              *
+     36               *                                                                       *
+     37              ***************************************************************************
+     38          
+     39              http://www.FreeRTOS.org/FAQHelp.html - Having a problem?  Start by reading
+     40              the FAQ page "My application does not run, what could be wrong?".  Have you
+     41              defined configASSERT()?
+     42          
+     43              http://www.FreeRTOS.org/support - In return for receiving this top quality
+     44              embedded software for free we request you assist our global community by
+     45              participating in the support forum.
+     46          
+     47              http://www.FreeRTOS.org/training - Investing in training allows your team to
+     48              be as productive as possible as early as possible.  Now you can receive
+     49              FreeRTOS training directly from Richard Barry, CEO of Real Time Engineers
+     50              Ltd, and the world's leading authority on the world's leading RTOS.
+     51          
+     52              http://www.FreeRTOS.org/plus - A selection of FreeRTOS ecosystem products,
+     53              including FreeRTOS+Trace - an indispensable productivity tool, a DOS
+     54              compatible FAT file system, and our tiny thread aware UDP/IP stack.
+     55          
+     56              http://www.FreeRTOS.org/labs - Where new FreeRTOS products go to incubate.
+     57              Come and try FreeRTOS+TCP, our new open source TCP/IP stack for FreeRTOS.
+     58          
+     59              http://www.OpenRTOS.com - Real Time Engineers ltd. license FreeRTOS to High
+     60              Integrity Systems ltd. to sell under the OpenRTOS brand.  Low cost OpenRTOS
+     61              licenses offer ticketed support, indemnification and commercial middleware.
+     62          
+     63              http://www.SafeRTOS.com - High Integrity Systems also provide a safety
+     64              engineered and independently SIL3 certified version for use in safety and
+     65              mission critical applications that require provable dependability.
+     66          
+     67              1 tab == 4 spaces!
+     68          */
+     69          
+     70          /*
+     71           * Creates all the demo application tasks, then starts the scheduler.  The WEB
+     72           * documentation provides more details of the standard demo application tasks.
+     73           * In addition to the standard demo tasks, the following tasks and tests are
+     74           * defined and/or created within this file:
+     75           *
+     76           * "Fast Interrupt Test" - A high frequency periodic interrupt is generated
+     77           * using a free running timer to demonstrate the use of the
+     78           * configKERNEL_INTERRUPT_PRIORITY configuration constant.  The interrupt
+     79           * service routine measures the number of processor clocks that occur between
+     80           * each interrupt - and in so doing measures the jitter in the interrupt timing.
+     81           * The maximum measured jitter time is latched in the ulMaxJitter variable, and
+     82           * displayed on the LCD by the 'Check' task as described below.  The
+     83           * fast interrupt is configured and handled in the timertest.c source file.
+     84           *
+     85           * "LCD" task - the LCD task is a 'gatekeeper' task.  It is the only task that
+     86           * is permitted to access the display directly.  Other tasks wishing to write a
+     87           * message to the LCD send the message on a queue to the LCD task instead of
+     88           * accessing the LCD themselves.  The LCD task just blocks on the queue waiting
+     89           * for messages - waking and displaying the messages as they arrive.
+     90           *
+     91           * "Check" task -  This only executes every five seconds but has the highest
+     92           * priority so is guaranteed to get processor time.  Its main function is to
+     93           * check that all the standard demo tasks are still operational.  Should any
+     94           * unexpected behaviour within a demo task be discovered the 'check' task will
+     95           * write an error to the LCD (via the LCD task).  If all the demo tasks are
+     96           * executing with their expected behaviour then the check task writes PASS
+     97           * along with the max jitter time to the LCD (again via the LCD task), as
+     98           * described above.
+     99           *
+    100           */
+    101          
+    102          /* Standard includes. */
+    103          #include <stdio.h>
+    104          
+    105          /* Scheduler includes. */
+    106          #include "FreeRTOS.h"
+    107          #include "task.h"
+    108          #include "queue.h"
+    109          
+    110          /* Library includes. */
+    111          #include "stm32f10x_it.h"
+    112          
+    113          /* Demo app includes. */
+    114          #include "lcd.h"
+    115          #include "LCD_Message.h"
+    116          #include "BlockQ.h"
+    117          #include "death.h"
+    118          #include "integer.h"
+    119          #include "blocktim.h"
+    120          #include "partest.h"
+    121          #include "semtest.h"
+    122          #include "PollQ.h"
+    123          #include "flash.h"
+    124          #include "comtest2.h"
+    125          
+    126          /* Task priorities. */
+    127          #define mainQUEUE_POLL_PRIORITY				( tskIDLE_PRIORITY + 2 )
+    128          #define mainCHECK_TASK_PRIORITY				( tskIDLE_PRIORITY + 3 )
+    129          #define mainSEM_TEST_PRIORITY				( tskIDLE_PRIORITY + 1 )
+    130          #define mainBLOCK_Q_PRIORITY				( tskIDLE_PRIORITY + 2 )
+    131          #define mainCREATOR_TASK_PRIORITY           ( tskIDLE_PRIORITY + 3 )
+    132          #define mainFLASH_TASK_PRIORITY				( tskIDLE_PRIORITY + 1 )
+    133          #define mainCOM_TEST_PRIORITY				( tskIDLE_PRIORITY + 1 )
+    134          #define mainINTEGER_TASK_PRIORITY           ( tskIDLE_PRIORITY )
+    135          
+    136          /* Constants related to the LCD. */
+    137          #define mainMAX_LINE						( 240 )
+    138          #define mainROW_INCREMENT					( 24 )
+    139          #define mainMAX_COLUMN						( 20 )
+    140          #define mainCOLUMN_START					( 319 )
+    141          #define mainCOLUMN_INCREMENT 				( 16 )
+    142          
+    143          /* The maximum number of message that can be waiting for display at any one
+    144          time. */
+    145          #define mainLCD_QUEUE_SIZE					( 3 )
+    146          
+    147          /* The check task uses the sprintf function so requires a little more stack. */
+    148          #define mainCHECK_TASK_STACK_SIZE			( configMINIMAL_STACK_SIZE + 50 )
+    149          
+    150          /* Dimensions the buffer into which the jitter time is written. */
+    151          #define mainMAX_MSG_LEN						25
+    152          
+    153          /* The time between cycles of the 'check' task. */
+    154          #define mainCHECK_DELAY						( ( TickType_t ) 5000 / portTICK_PERIOD_MS )
+    155          
+    156          /* The number of nano seconds between each processor clock. */
+    157          #define mainNS_PER_CLOCK ( ( unsigned long ) ( ( 1.0 / ( double ) configCPU_CLOCK_HZ ) * 1000000000.0 ) )
+    158          
+    159          /* Baud rate used by the comtest tasks. */
+    160          #define mainCOM_TEST_BAUD_RATE		( 115200 )
+    161          
+    162          /* The LED used by the comtest tasks. See the comtest.c file for more
+    163          information. */
+    164          #define mainCOM_TEST_LED			( 3 )
+    165          
+    166          /*-----------------------------------------------------------*/
+    167          
+    168          /*
+    169           * Configure the clocks, GPIO and other peripherals as required by the demo.
+    170           */
+    171          static void prvSetupHardware( void );
+    172          
+    173          /*
+    174           * Configure the LCD as required by the demo.
+    175           */
+    176          static void prvConfigureLCD( void );
+    177          
+    178          /*
+    179           * The LCD is written two by more than one task so is controlled by a
+    180           * 'gatekeeper' task.  This is the only task that is actually permitted to
+    181           * access the LCD directly.  Other tasks wanting to display a message send
+    182           * the message to the gatekeeper.
+    183           */
+    184          static void vLCDTask( void *pvParameters );
+    185          
+    186          /*
+    187           * Retargets the C library printf function to the USART.
+    188           */
+    189          int fputc( int ch, FILE *f );
+    190          
+    191          /*
+    192           * Checks the status of all the demo tasks then prints a message to the
+    193           * display.  The message will be either PASS - and include in brackets the
+    194           * maximum measured jitter time (as described at the to of the file), or a
+    195           * message that describes which of the standard demo tasks an error has been
+    196           * discovered in.
+    197           *
+    198           * Messages are not written directly to the terminal, but passed to vLCDTask
+    199           * via a queue.
+    200           */
+    201          static void vCheckTask( void *pvParameters );
+    202          
+    203          /*
+    204           * Configures the timers and interrupts for the fast interrupt test as
+    205           * described at the top of this file.
+    206           */
+    207          extern void vSetupTimerTest( void );
+    208          
+    209          /*-----------------------------------------------------------*/
+    210          
+    211          /* The queue used to send messages to the LCD task. */
+    212          QueueHandle_t xLCDQueue;
+    213          
+    214          /*-----------------------------------------------------------*/
+    215          
+    216          int main( void )
+    217          {
+    218          #ifdef DEBUG
+    219            debug();
+    220          #endif
+    221          
+    222          	prvSetupHardware();
+    223          
+    224          	/* Create the queue used by the LCD task.  Messages for display on the LCD
+    225          	are received via this queue. */
+    226          	xLCDQueue = xQueueCreate( mainLCD_QUEUE_SIZE, sizeof( xLCDMessage ) );
+    227          
+    228          	/* Start the standard demo tasks. */
+    229          	vStartBlockingQueueTasks( mainBLOCK_Q_PRIORITY );
+    230              vCreateBlockTimeTasks();
+    231              vStartSemaphoreTasks( mainSEM_TEST_PRIORITY );
+    232              vStartPolledQueueTasks( mainQUEUE_POLL_PRIORITY );
+    233              vStartIntegerMathTasks( mainINTEGER_TASK_PRIORITY );
+    234          	vStartLEDFlashTasks( mainFLASH_TASK_PRIORITY );
+    235          	vAltStartComTestTasks( mainCOM_TEST_PRIORITY, mainCOM_TEST_BAUD_RATE, mainCOM_TEST_LED );
+    236          
+    237          	/* Start the tasks defined within this file/specific to this demo. */
+    238              xTaskCreate( vCheckTask, "Check", mainCHECK_TASK_STACK_SIZE, NULL, mainCHECK_TASK_PRIORITY, NULL );
+    239          	xTaskCreate( vLCDTask, "LCD", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL );
+    240          
+    241          	/* The suicide tasks must be created last as they need to know how many
+    242          	tasks were running prior to their creation in order to ascertain whether
+    243          	or not the correct/expected number of tasks are running at any given time. */
+    244              vCreateSuicidalTasks( mainCREATOR_TASK_PRIORITY );
+    245          
+    246          	/* Configure the timers used by the fast interrupt timer test. */
+    247          	vSetupTimerTest();
+    248          
+    249          	/* Start the scheduler. */
+    250          	vTaskStartScheduler();
+    251          
+    252          	/* Will only get here if there was not enough heap space to create the
+    253          	idle task. */
+    254          	return 0;
+    255          }
+    256          /*-----------------------------------------------------------*/
+    257          
+    258          void vLCDTask( void *pvParameters )
+    259          {
+    260          xLCDMessage xMessage;
+    261          
+    262          	/* Initialise the LCD and display a startup message. */
+    263          	prvConfigureLCD();
+    264          	LCD_DrawMonoPict( ( unsigned long * ) pcBitmap );
+    265          
+    266          	for( ;; )
+    267          	{
+    268          		/* Wait for a message to arrive that requires displaying. */
+    269          		while( xQueueReceive( xLCDQueue, &xMessage, portMAX_DELAY ) != pdPASS );
+    270          
+    271          		/* Display the message.  Print each message to a different position. */
+    272          		printf( ( char const * ) xMessage.pcMessage );
+    273          	}
+    274          }
+    275          /*-----------------------------------------------------------*/
+    276          
+    277          static void vCheckTask( void *pvParameters )
+    278          {
+    279          TickType_t xLastExecutionTime;
+    280          xLCDMessage xMessage;
+    281          static signed char cPassMessage[ mainMAX_MSG_LEN ];
+    282          extern unsigned short usMaxJitter;
+    283          
+    284          	xLastExecutionTime = xTaskGetTickCount();
+    285          	xMessage.pcMessage = cPassMessage;
+    286          
+    287              for( ;; )
+    288          	{
+    289          		/* Perform this check every mainCHECK_DELAY milliseconds. */
+    290          		vTaskDelayUntil( &xLastExecutionTime, mainCHECK_DELAY );
+    291          
+    292          		/* Has an error been found in any task? */
+    293          
+    294                  if( xAreBlockingQueuesStillRunning() != pdTRUE )
+    295          		{
+    296          			xMessage.pcMessage = "ERROR IN BLOCK Q\n";
+    297          		}
+    298          		else if( xAreBlockTimeTestTasksStillRunning() != pdTRUE )
+    299          		{
+    300          			xMessage.pcMessage = "ERROR IN BLOCK TIME\n";
+    301          		}
+    302                  else if( xAreSemaphoreTasksStillRunning() != pdTRUE )
+    303                  {
+    304                      xMessage.pcMessage = "ERROR IN SEMAPHORE\n";
+    305                  }
+    306                  else if( xArePollingQueuesStillRunning() != pdTRUE )
+    307                  {
+    308                      xMessage.pcMessage = "ERROR IN POLL Q\n";
+    309                  }
+    310                  else if( xIsCreateTaskStillRunning() != pdTRUE )
+    311                  {
+    312                      xMessage.pcMessage = "ERROR IN CREATE\n";
+    313                  }
+    314                  else if( xAreIntegerMathsTaskStillRunning() != pdTRUE )
+    315                  {
+    316                      xMessage.pcMessage = "ERROR IN MATH\n";
+    317                  }
+    318          		else if( xAreComTestTasksStillRunning() != pdTRUE )
+    319          		{
+    320          			xMessage.pcMessage = "ERROR IN COM TEST\n";
+    321          		}
+    322          		else
+    323          		{
+    324          			sprintf( ( char * ) cPassMessage, "PASS [%uns]\n", ( ( unsigned long ) usMaxJitter ) * mainNS_PER_CLOCK );
+    325          		}
+    326          
+    327          		/* Send the message to the LCD gatekeeper for display. */
+    328          		xQueueSend( xLCDQueue, &xMessage, portMAX_DELAY );
+    329          	}
+    330          }
+    331          /*-----------------------------------------------------------*/
+    332          
+    333          static void prvSetupHardware( void )
+    334          {
+    335          	/* Start with the clocks in their expected state. */
+    336          	RCC_DeInit();
+    337          
+    338          	/* Enable HSE (high speed external clock). */
+    339          	RCC_HSEConfig( RCC_HSE_ON );
+    340          
+    341          	/* Wait till HSE is ready. */
+    342          	while( RCC_GetFlagStatus( RCC_FLAG_HSERDY ) == RESET )
+    343          	{
+    344          	}
+    345          
+    346          	/* 2 wait states required on the flash. */
+    347          	*( ( unsigned long * ) 0x40022000 ) = 0x02;
+    348          
+    349          	/* HCLK = SYSCLK */
+    350          	RCC_HCLKConfig( RCC_SYSCLK_Div1 );
+    351          
+    352          	/* PCLK2 = HCLK */
+    353          	RCC_PCLK2Config( RCC_HCLK_Div1 );
+    354          
+    355          	/* PCLK1 = HCLK/2 */
+    356          	RCC_PCLK1Config( RCC_HCLK_Div2 );
+    357          
+    358          	/* PLLCLK = 8MHz * 9 = 72 MHz. */
+    359          	RCC_PLLConfig( RCC_PLLSource_HSE_Div1, RCC_PLLMul_9 );
+    360          
+    361          	/* Enable PLL. */
+    362          	RCC_PLLCmd( ENABLE );
+    363          
+    364          	/* Wait till PLL is ready. */
+    365          	while(RCC_GetFlagStatus(RCC_FLAG_PLLRDY) == RESET)
+    366          	{
+    367          	}
+    368          
+    369          	/* Select PLL as system clock source. */
+    370          	RCC_SYSCLKConfig( RCC_SYSCLKSource_PLLCLK );
+    371          
+    372          	/* Wait till PLL is used as system clock source. */
+    373          	while( RCC_GetSYSCLKSource() != 0x08 )
+    374          	{
+    375          	}
+    376          
+    377          	/* Enable GPIOA, GPIOB, GPIOC, GPIOD, GPIOE and AFIO clocks */
+    378          	RCC_APB2PeriphClockCmd(	RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB |RCC_APB2Periph_GPIOC
+    379          							| RCC_APB2Periph_GPIOD | RCC_APB2Periph_GPIOE | RCC_APB2Periph_AFIO, ENABLE );
+    380          
+    381          	/* SPI2 Periph clock enable */
+    382          	RCC_APB1PeriphClockCmd( RCC_APB1Periph_SPI2, ENABLE );
+    383          
+    384          
+    385          	/* Set the Vector Table base address at 0x08000000 */
+    386          	NVIC_SetVectorTable( NVIC_VectTab_FLASH, 0x0 );
+    387          
+    388          	NVIC_PriorityGroupConfig( NVIC_PriorityGroup_4 );
+    389          
+    390          	/* Configure HCLK clock as SysTick clock source. */
+    391          	SysTick_CLKSourceConfig( SysTick_CLKSource_HCLK );
+    392          
+    393          	vParTestInitialise();
+    394          }
+    395          /*-----------------------------------------------------------*/
+    396          
+    397          static void prvConfigureLCD( void )
+    398          {
+    399          GPIO_InitTypeDef GPIO_InitStructure;
+    400          
+    401          	/* Configure LCD Back Light (PA8) as output push-pull */
+    402          	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8;
+    403          	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    404          	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+    405          	GPIO_Init( GPIOA, &GPIO_InitStructure );
+    406          
+    407          	/* Set the Backlight Pin */
+    408          	GPIO_WriteBit(GPIOA, GPIO_Pin_8, Bit_SET);
+    409          
+    410          	/* Initialize the LCD */
+    411          	LCD_Init();
+    412          
+    413          	/* Set the Back Color */
+    414          	LCD_SetBackColor( White );
+    415          
+    416          	/* Set the Text Color */
+    417          	LCD_SetTextColor( 0x051F );
+    418          
+    419          	LCD_Clear();
+    420          }
+    421          /*-----------------------------------------------------------*/
+    422          
+    423          int fputc( int ch, FILE *f )
+    424          {
+    425          static unsigned short usColumn = 0, usRefColumn = mainCOLUMN_START;
+    426          static unsigned char ucLine = 0;
+    427          
+    428          	if( ( usColumn == 0 ) && ( ucLine == 0 ) )
+    429          	{
+    430          		LCD_Clear();
+    431          	}
+    432          
+    433          	if( ch != '\n' )
+    434          	{
+    435          		/* Display one character on LCD */
+    436          		LCD_DisplayChar( ucLine, usRefColumn, (u8) ch );
+    437          
+    438          		/* Decrement the column position by 16 */
+    439          		usRefColumn -= mainCOLUMN_INCREMENT;
+    440          
+    441          		/* Increment the character counter */
+    442          		usColumn++;
+    443          		if( usColumn == mainMAX_COLUMN )
+    444          		{
+    445          			ucLine += mainROW_INCREMENT;
+    446          			usRefColumn = mainCOLUMN_START;
+    447          			usColumn = 0;
+    448          		}
+    449          	}
+    450          	else
+    451          	{
+    452          		/* Move back to the first column of the next line. */
+    453          		ucLine += mainROW_INCREMENT;
+    454          		usRefColumn = mainCOLUMN_START;
+    455          		usColumn = 0;
+    456          	}
+    457          
+    458          	/* Wrap back to the top of the display. */
+    459          	if( ucLine >= mainMAX_LINE )
+    460          	{
+    461          		ucLine = 0;
+    462          	}
+    463          
+    464          	return ch;
+    465          }
+    466          /*-----------------------------------------------------------*/
+    467          
+    468          #ifdef  DEBUG
+    469          /* Keep the linker happy. */
+    470          void assert_failed( unsigned char* pcFile, unsigned long ulLine )
+    471          {
+    472          	for( ;; )
+    473          	{
+    474          	}
+    475          }
+    476          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   assert_failed
+       8   fputc
+         8   -> LCD_Clear
+         8   -> LCD_DisplayChar
+      16   main
+        16   -> debug
+        16   -> prvSetupHardware
+        16   -> vAltStartComTestTasks
+        16   -> vCreateBlockTimeTasks
+        16   -> vCreateSuicidalTasks
+        16   -> vSetupTimerTest
+        16   -> vStartBlockingQueueTasks
+        16   -> vStartIntegerMathTasks
+        16   -> vStartLEDFlashTasks
+        16   -> vStartPolledQueueTasks
+        16   -> vStartSemaphoreTasks
+        16   -> vTaskStartScheduler
+        16   -> xQueueGenericCreate
+        16   -> xTaskCreate
+       8   prvConfigureLCD
+         8   -> GPIO_Init
+         8   -> GPIO_WriteBit
+         8   -> LCD_Clear
+         8   -> LCD_Init
+         8   -> LCD_SetBackColor
+         8   -> LCD_SetTextColor
+       8   prvSetupHardware
+         8   -> NVIC_PriorityGroupConfig
+         8   -> NVIC_SetVectorTable
+         8   -> RCC_APB1PeriphClockCmd
+         8   -> RCC_APB2PeriphClockCmd
+         8   -> RCC_DeInit
+         8   -> RCC_GetFlagStatus
+         8   -> RCC_GetSYSCLKSource
+         8   -> RCC_HCLKConfig
+         8   -> RCC_HSEConfig
+         8   -> RCC_PCLK1Config
+         8   -> RCC_PCLK2Config
+         8   -> RCC_PLLCmd
+         8   -> RCC_PLLConfig
+         8   -> RCC_SYSCLKConfig
+         8   -> SysTick_CLKSourceConfig
+         8   -> vParTestInitialise
+      16   vCheckTask
+        16   -> sprintf
+        16   -> vTaskDelayUntil
+        16   -> xAreBlockTimeTestTasksStillRunning
+        16   -> xAreBlockingQueuesStillRunning
+        16   -> xAreComTestTasksStillRunning
+        16   -> xAreIntegerMathsTaskStillRunning
+        16   -> xArePollingQueuesStillRunning
+        16   -> xAreSemaphoreTasksStillRunning
+        16   -> xIsCreateTaskStillRunning
+        16   -> xQueueGenericSend
+        16   -> xTaskGetTickCount
+      16   vLCDTask
+        16   -> LCD_DrawMonoPict
+        16   -> printf
+        16   -> prvConfigureLCD
+        16   -> xQueueGenericReceive
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable5
+       4  ??DataTable5_1
+       4  ??DataTable5_10
+       4  ??DataTable5_11
+       4  ??DataTable5_12
+       4  ??DataTable5_13
+       4  ??DataTable5_14
+       4  ??DataTable5_15
+       4  ??DataTable5_16
+       4  ??DataTable5_17
+       4  ??DataTable5_18
+       4  ??DataTable5_2
+       4  ??DataTable5_3
+       4  ??DataTable5_4
+       4  ??DataTable5_5
+       4  ??DataTable5_6
+       4  ??DataTable5_7
+       4  ??DataTable5_8
+       4  ??DataTable5_9
+       8  ?_0
+       4  ?_1
+      20  ?_2
+      24  ?_3
+      20  ?_4
+      20  ?_5
+      20  ?_6
+      16  ?_7
+      20  ?_8
+      16  ?_9
+       2  assert_failed
+      28  cPassMessage
+     140  fputc
+     134  main
+    9664  pcBitmap
+      72  prvConfigureLCD
+     138  prvSetupHardware
+       1  ucLine
+       2  usColumn
+       2  usRefColumn
+     156  vCheckTask
+      42  vLCDTask
+       4  xLCDQueue
+
+ 
+    35 bytes in section .bss
+     2 bytes in section .data
+ 9 832 bytes in section .rodata
+   760 bytes in section .text
+ 
+   760 bytes of CODE  memory
+ 9 832 bytes of CONST memory
+    37 bytes of DATA  memory
+
+Errors: none
+Warnings: none

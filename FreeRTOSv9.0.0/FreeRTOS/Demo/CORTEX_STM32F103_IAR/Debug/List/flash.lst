@@ -1,0 +1,234 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.40.3.8902/W32 for ARM        03/May/2017  13:42:10
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\Common\Minimal\flash.c
+#    Command line =  
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\Common\Minimal\flash.c
+#        -D VECT_TAB_FLASH -D IAR_ARM_CM3 -lcN
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\Debug\List\
+#        --diag_suppress Pa082,pe191 -o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\Debug\Obj\
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "D:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench 7.2\arm\INC\c\DLib_Config_Full.h"
+#        -I
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\.\
+#        -I
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\STM32F10xFWLib\inc\
+#        -I
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\..\..\Source\include\
+#        -I
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\..\common\include\
+#        -Ol --use_c++_inline --require_prototypes
+#    List file    =  
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\Debug\List\flash.lst
+#    Object file  =  
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_STM32F103_IAR\Debug\Obj\flash.o
+#
+###############################################################################
+
+E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\Common\Minimal\flash.c
+      1          /*
+      2              FreeRTOS V9.0.0 - Copyright (C) 2016 Real Time Engineers Ltd.
+      3              All rights reserved
+      4          
+      5              VISIT http://www.FreeRTOS.org TO ENSURE YOU ARE USING THE LATEST VERSION.
+      6          
+      7              This file is part of the FreeRTOS distribution.
+      8          
+      9              FreeRTOS is free software; you can redistribute it and/or modify it under
+     10              the terms of the GNU General Public License (version 2) as published by the
+     11              Free Software Foundation >>>> AND MODIFIED BY <<<< the FreeRTOS exception.
+     12          
+     13              ***************************************************************************
+     14              >>!   NOTE: The modification to the GPL is included to allow you to     !<<
+     15              >>!   distribute a combined work that includes FreeRTOS without being   !<<
+     16              >>!   obliged to provide the source code for proprietary components     !<<
+     17              >>!   outside of the FreeRTOS kernel.                                   !<<
+     18              ***************************************************************************
+     19          
+     20              FreeRTOS is distributed in the hope that it will be useful, but WITHOUT ANY
+     21              WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+     22              FOR A PARTICULAR PURPOSE.  Full license text is available on the following
+     23              link: http://www.freertos.org/a00114.html
+     24          
+     25              ***************************************************************************
+     26               *                                                                       *
+     27               *    FreeRTOS provides completely free yet professionally developed,    *
+     28               *    robust, strictly quality controlled, supported, and cross          *
+     29               *    platform software that is more than just the market leader, it     *
+     30               *    is the industry's de facto standard.                               *
+     31               *                                                                       *
+     32               *    Help yourself get started quickly while simultaneously helping     *
+     33               *    to support the FreeRTOS project by purchasing a FreeRTOS           *
+     34               *    tutorial book, reference manual, or both:                          *
+     35               *    http://www.FreeRTOS.org/Documentation                              *
+     36               *                                                                       *
+     37              ***************************************************************************
+     38          
+     39              http://www.FreeRTOS.org/FAQHelp.html - Having a problem?  Start by reading
+     40              the FAQ page "My application does not run, what could be wrong?".  Have you
+     41              defined configASSERT()?
+     42          
+     43              http://www.FreeRTOS.org/support - In return for receiving this top quality
+     44              embedded software for free we request you assist our global community by
+     45              participating in the support forum.
+     46          
+     47              http://www.FreeRTOS.org/training - Investing in training allows your team to
+     48              be as productive as possible as early as possible.  Now you can receive
+     49              FreeRTOS training directly from Richard Barry, CEO of Real Time Engineers
+     50              Ltd, and the world's leading authority on the world's leading RTOS.
+     51          
+     52              http://www.FreeRTOS.org/plus - A selection of FreeRTOS ecosystem products,
+     53              including FreeRTOS+Trace - an indispensable productivity tool, a DOS
+     54              compatible FAT file system, and our tiny thread aware UDP/IP stack.
+     55          
+     56              http://www.FreeRTOS.org/labs - Where new FreeRTOS products go to incubate.
+     57              Come and try FreeRTOS+TCP, our new open source TCP/IP stack for FreeRTOS.
+     58          
+     59              http://www.OpenRTOS.com - Real Time Engineers ltd. license FreeRTOS to High
+     60              Integrity Systems ltd. to sell under the OpenRTOS brand.  Low cost OpenRTOS
+     61              licenses offer ticketed support, indemnification and commercial middleware.
+     62          
+     63              http://www.SafeRTOS.com - High Integrity Systems also provide a safety
+     64              engineered and independently SIL3 certified version for use in safety and
+     65              mission critical applications that require provable dependability.
+     66          
+     67              1 tab == 4 spaces!
+     68          */
+     69          
+     70          /**
+     71           * This version of flash .c is for use on systems that have limited stack space
+     72           * and no display facilities.  The complete version can be found in the 
+     73           * Demo/Common/Full directory.
+     74           * 
+     75           * Three tasks are created, each of which flash an LED at a different rate.  The first 
+     76           * LED flashes every 200ms, the second every 400ms, the third every 600ms.
+     77           *
+     78           * The LED flash tasks provide instant visual feedback.  They show that the scheduler 
+     79           * is still operational.
+     80           *
+     81           */
+     82          
+     83          
+     84          #include <stdlib.h>
+     85          
+     86          /* Scheduler include files. */
+     87          #include "FreeRTOS.h"
+     88          #include "task.h"
+     89          
+     90          /* Demo program include files. */
+     91          #include "partest.h"
+     92          #include "flash.h"
+     93          
+     94          #define ledSTACK_SIZE		configMINIMAL_STACK_SIZE
+     95          #define ledNUMBER_OF_LEDS	( 3 )
+     96          #define ledFLASH_RATE_BASE	( ( TickType_t ) 333 )
+     97          
+     98          /* Variable used by the created tasks to calculate the LED number to use, and
+     99          the rate at which they should flash the LED. */
+    100          static volatile UBaseType_t uxFlashTaskNumber = 0;
+    101          
+    102          /* The task that is created three times. */
+    103          static portTASK_FUNCTION_PROTO( vLEDFlashTask, pvParameters );
+    104          
+    105          /*-----------------------------------------------------------*/
+    106          
+    107          void vStartLEDFlashTasks( UBaseType_t uxPriority )
+    108          {
+    109          BaseType_t xLEDTask;
+    110          
+    111          	/* Create the three tasks. */
+    112          	for( xLEDTask = 0; xLEDTask < ledNUMBER_OF_LEDS; ++xLEDTask )
+    113          	{
+    114          		/* Spawn the task. */
+    115          		xTaskCreate( vLEDFlashTask, "LEDx", ledSTACK_SIZE, NULL, uxPriority, ( TaskHandle_t * ) NULL );
+    116          	}
+    117          }
+    118          /*-----------------------------------------------------------*/
+    119          
+    120          static portTASK_FUNCTION( vLEDFlashTask, pvParameters )
+    121          {
+    122          TickType_t xFlashRate, xLastFlashTime;
+    123          UBaseType_t uxLED;
+    124          
+    125          	/* The parameters are not used. */
+    126          	( void ) pvParameters;
+    127          
+    128          	/* Calculate the LED and flash rate. */
+    129          	portENTER_CRITICAL();
+    130          	{
+    131          		/* See which of the eight LED's we should use. */
+    132          		uxLED = uxFlashTaskNumber;
+    133          
+    134          		/* Update so the next task uses the next LED. */
+    135          		uxFlashTaskNumber++;
+    136          	}
+    137          	portEXIT_CRITICAL();
+    138          
+    139          	xFlashRate = ledFLASH_RATE_BASE + ( ledFLASH_RATE_BASE * ( TickType_t ) uxLED );
+    140          	xFlashRate /= portTICK_PERIOD_MS;
+    141          
+    142          	/* We will turn the LED on and off again in the delay period, so each
+    143          	delay is only half the total period. */
+    144          	xFlashRate /= ( TickType_t ) 2;
+    145          
+    146          	/* We need to initialise xLastFlashTime prior to the first call to 
+    147          	vTaskDelayUntil(). */
+    148          	xLastFlashTime = xTaskGetTickCount();
+    149          
+    150          	for(;;)
+    151          	{
+    152          		/* Delay for half the flash period then turn the LED on. */
+    153          		vTaskDelayUntil( &xLastFlashTime, xFlashRate );
+    154          		vParTestToggleLED( uxLED );
+    155          
+    156          		/* Delay for half the flash period then turn the LED off. */
+    157          		vTaskDelayUntil( &xLastFlashTime, xFlashRate );
+    158          		vParTestToggleLED( uxLED );
+    159          	}
+    160          } /*lint !e715 !e818 !e830 Function definition must be standard for task creation. */
+    161          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   vLEDFlashTask
+        16   -> vParTestToggleLED
+        16   -> vPortEnterCritical
+        16   -> vPortExitCritical
+        16   -> vTaskDelayUntil
+        16   -> xTaskGetTickCount
+      24   vStartLEDFlashTasks
+        24   -> xTaskCreate
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+       4  ??DataTable1_1
+       8  ?_0
+       4  uxFlashTaskNumber
+      80  vLEDFlashTask
+      38  vStartLEDFlashTasks
+
+ 
+   4 bytes in section .bss
+   8 bytes in section .rodata
+ 126 bytes in section .text
+ 
+ 126 bytes of CODE  memory
+   8 bytes of CONST memory
+   4 bytes of DATA  memory
+
+Errors: none
+Warnings: none

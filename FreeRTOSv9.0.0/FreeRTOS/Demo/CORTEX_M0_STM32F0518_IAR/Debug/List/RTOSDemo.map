@@ -1,0 +1,699 @@
+###############################################################################
+#
+# IAR ELF Linker V7.40.3.8902/W32 for ARM                 01/Nov/2017  00:01:58
+# Copyright 2007-2015 IAR Systems AB.
+#
+#    Output file  =  
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Exe\RTOSDemo.out
+#    Map file     =  
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\List\RTOSDemo.map
+#    Command line =  
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\blocktim.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\countsem.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\dynamic.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\heap_2.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\list.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\main-blinky.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\main-full.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\main.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\ParTest.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\port.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\portasm.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\queue.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\recmutex.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\RegTest.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\startup_stm32f0xx.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\stm320518_eval.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\stm32f0xx_adc.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\stm32f0xx_cec.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\stm32f0xx_comp.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\stm32f0xx_crc.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\stm32f0xx_dac.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\stm32f0xx_dbgmcu.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\stm32f0xx_dma.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\stm32f0xx_exti.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\stm32f0xx_flash.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\stm32f0xx_gpio.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\stm32f0xx_i2c.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\stm32f0xx_iwdg.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\stm32f0xx_misc.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\stm32f0xx_pwr.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\stm32f0xx_rcc.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\stm32f0xx_rtc.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\stm32f0xx_spi.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\stm32f0xx_syscfg.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\stm32f0xx_tim.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\stm32f0xx_usart.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\stm32f0xx_wwdg.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\system_stm32f0xx.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\tasks.o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj\timers.o
+#        --redirect _Printf=_PrintfFull --redirect _Scanf=_ScanfFull -o
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Exe\RTOSDemo.out
+#        --map
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\List\RTOSDemo.map
+#        --config
+#        E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\stm32f0xx_flash.icf
+#        --semihosting --entry __iar_program_start --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor                     = *
+__Heap_Handler                = Basic
+__SystemLibrary               = DLib
+__dlib_dynamic_initialization = normal
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x08000000 { ro section .intvec };
+"P1":  place in [from 0x08000000 to 0x0800ffff] { ro };
+"P2":  place in [from 0x20000000 to 0x20001fff] { rw, block CSTACK, block HEAP };
+
+  Section             Kind        Address    Size  Object
+  -------             ----        -------    ----  ------
+"A1":                                        0xc0
+  .intvec             ro code  0x08000000    0xc0  startup_stm32f0xx.o [1]
+                             - 0x080000c0    0xc0
+
+"P1":                                      0x4862
+  .text               ro code  0x080000c0  0x12ca  xprintffull.o [3]
+  .text               ro code  0x0800138a    0x1c  xmbtowc.o [3]
+  .text               ro code  0x080013a6    0x14  strchr.o [5]
+  .text               ro code  0x080013ba    0x10  strlen.o [5]
+  .text               ro code  0x080013ca    0x18  memchr.o [5]
+  .text               ro code  0x080013e2     0xa  xmbcurmax.o [3]
+  .text               ro code  0x080013ec    0xb8  xxmemxmalloc.o [3]
+  .text               ro code  0x080014a4    0x18  xwctomb.o [3]
+  .text               ro code  0x080014bc    0x5c  ABImemcpy.o [5]
+  .text               ro code  0x08001518    0x88  xxmemxfree.o [3]
+  .text               ro code  0x080015a0    0x6a  I64DivMod.o [5]
+  .text               ro code  0x0800160a    0x44  xdnorm.o [4]
+  .text               ro code  0x0800164e    0x32  DblCmpLe.o [4]
+  .text               ro code  0x08001680    0x32  DblCmpGe.o [4]
+  .text               ro code  0x080016b2     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x080016b4   0x11c  xdscale.o [4]
+  .text               ro code  0x080017d0    0x52  DblToI32.o [4]
+  .text               ro code  0x08001822     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x08001824    0x34  I32ToDbl.o [4]
+  .text               ro code  0x08001858   0x1a8  DblAddSub.o [4]
+  .text               ro code  0x08001a00    0xe0  I32DivModFast.o [5]
+  .text               ro code  0x08001ae0   0x184  DblMul.o [4]
+  .text               ro code  0x08001c64    0xc2  DblDiv.o [4]
+  .text               ro code  0x08001d26     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x08001d28    0x68  localeconv.o [3]
+  .text               ro code  0x08001d90    0x20  div.o [3]
+  .text               ro code  0x08001db0    0x14  setlocale.o [3]
+  .text               ro code  0x08001dc4    0x50  xencoding_sb.o [3]
+  .text               ro code  0x08001e14    0x2c  xgetmemchunk.o [3]
+  .text               ro code  0x08001e40     0x2  I64DivZer.o [5]
+  .text               ro code  0x08001e42     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x08001e44     0x2  IntDivZer.o [5]
+  .text               ro code  0x08001e46     0x2  xtls.o [3]
+  .text               ro code  0x08001e48   0x940  tasks.o [1]
+  .text               ro code  0x08002788    0xe8  heap_2.o [1]
+  .text               ro code  0x08002870    0x40  ABImemset.o [5]
+  .text               ro code  0x080028b0    0x94  list.o [1]
+  .text               ro code  0x08002944    0xe0  port.o [1]
+  .text               ro code  0x08002a24   0x378  timers.o [1]
+  .text               ro code  0x08002d9c    0x40  main.o [1]
+  CODE                ro code  0x08002ddc    0x7c  portasm.o [1]
+  .text               ro code  0x08002e58   0x618  queue.o [1]
+  .text               ro code  0x08003470    0xc6  ParTest.o [1]
+  .text               ro code  0x08003536     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x08003538   0x170  main-full.o [1]
+  .text               ro code  0x080036a8   0x11a  stm320518_eval.o [1]
+  .text               ro code  0x080037c2     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x080037c4    0x24  printf.o [3]
+  .text               ro code  0x080037e8    0xd6  stm32f0xx_usart.o [1]
+  .text               ro code  0x080038be     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x080038c0   0x354  blocktim.o [1]
+  .text               ro code  0x08003c14   0x1e4  countsem.o [1]
+  .text               ro code  0x08003df8   0x1e4  recmutex.o [1]
+  .text               ro code  0x08003fdc   0x244  dynamic.o [1]
+  .text               ro code  0x08004220   0x15c  stm32f0xx_rcc.o [1]
+  .text               ro code  0x0800437c    0x8a  stm32f0xx_gpio.o [1]
+  .text               ro code  0x08004406     0x2  startup_stm32f0xx.o [1]
+  CODE                ro code  0x08004408    0xf4  RegTest.o [1]
+  .text               ro code  0x080044fc    0xf0  system_stm32f0xx.o [1]
+  .text               ro code  0x080045ec    0xd8  packbits_init.o [5]
+  .text               ro code  0x080046c4     0xa  abort.o [3]
+  .text               ro code  0x080046ce     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x080046d0    0x14  exit.o [6]
+  .text               ro code  0x080046e4    0x3c  zero_init3.o [5]
+  .text               ro code  0x08004720    0x34  startup_stm32f0xx.o [1]
+  .rodata             const    0x08004754    0x28  xprintffull.o [3]
+  .text               ro code  0x0800477c    0x28  data_init.o [5]
+  .iar.init_table     const    0x080047a4    0x2c  - Linker created -
+  .text               ro code  0x080047d0    0x1a  cmain.o [5]
+  .text               ro code  0x080047ea     0x4  low_level_init.o [3]
+  .text               ro code  0x080047ee     0x8  exit.o [3]
+  .text               ro code  0x080047f6     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x080047f8     0xa  cexit.o [5]
+  .text               ro code  0x08004802    0x16  xprout.o [3]
+  .text               ro code  0x08004818    0x10  putchar.o [3]
+  .text               ro code  0x08004828     0xc  cstartup_M.o [5]
+  .text               ro code  0x08004834     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x08004836     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x08004838     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x0800483a     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x0800483c     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x0800483e     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x08004840     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x08004842     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x08004844     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x08004846     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x08004848     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x0800484a     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x0800484c     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x0800484e     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x08004850     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x08004852     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x08004854     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x08004856     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x08004858     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x0800485a     0x2  startup_stm32f0xx.o [1]
+  .text               ro code  0x0800485c     0x2  startup_stm32f0xx.o [1]
+  .rodata             const    0x0800485e     0x0  zero_init3.o [5]
+  .rodata             const    0x0800485e     0x0  packbits_init.o [5]
+  Initializer bytes   const    0x0800485e    0xc4  <for P2 s0>
+                             - 0x08004922  0x4862
+
+"P2":                                      0x1f98
+  P2 s0                        0x20000000  0x1900  <Init block>
+    .data             inited   0x20000000  0x1788  heap_2.o [1]
+    __DLIB_PERTHREAD  inited   0x20001788    0x88  localeconv.o [3]
+    __DLIB_PERTHREAD  inited   0x20001810    0x74  setlocale.o [3]
+    .data             inited   0x20001884    0x40  xfiles.o [3]
+    .data             inited   0x200018c4    0x14  system_stm32f0xx.o [1]
+    .data             inited   0x200018d8    0x10  stm32f0xx_rcc.o [1]
+    .data             inited   0x200018e8     0xc  stm320518_eval.o [1]
+    .data             inited   0x200018f4     0x8  stm320518_eval.o [1]
+    .data             inited   0x200018fc     0x4  port.o [1]
+  .bss                zero     0x20001900    0xac  tasks.o [1]
+  .bss                zero     0x200019ac    0x58  tasks.o [1]
+  .bss                zero     0x20001a04    0x50  xfiles.o [3]
+  .bss                zero     0x20001a54    0x40  queue.o [1]
+  .bss                zero     0x20001a94    0x38  timers.o [1]
+  .bss                zero     0x20001acc    0x30  recmutex.o [1]
+  .bss                zero     0x20001afc    0x28  dynamic.o [1]
+  .bss                zero     0x20001b24    0x24  countsem.o [1]
+  .bss                zero     0x20001b48    0x20  blocktim.o [1]
+  .bss                zero     0x20001b68    0x14  main-full.o [1]
+  .bss                zero     0x20001b7c     0x8  xxmemxmalloc.o [3]
+  .bss                zero     0x20001b84     0x4  ParTest.o [1]
+  .bss                zero     0x20001b88     0x4  ParTest.o [1]
+  .bss                zero     0x20001b8c     0x4  timers.o [1]
+  .bss                zero     0x20001b90     0x4  xgetmemchunk.o [3]
+  CSTACK                       0x20001b98   0x400  <Block>
+    CSTACK            uninit   0x20001b98   0x400  <Block tail>
+  HEAP                         0x20001f98     0x0  <Block>
+                             - 0x20001f98  0x1f98
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x294:
+          0x20001900   0x294
+
+Copy/packbits (__iar_packbits_init3)
+    1 source range, total size 0xc4 (3% of destination):
+          0x0800485e    0xc4
+    1 destination range, total size 0x1900:
+          0x20000000  0x1900
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module               ro code  ro data  rw data
+    ------               -------  -------  -------
+E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj: [1]
+    ParTest.o                198                 8
+    RegTest.o                244
+    blocktim.o               852                32
+    countsem.o               484                36
+    dynamic.o                580                40
+    heap_2.o                 232      184    6 024
+    list.o                   148
+    main-full.o              368                20
+    main.o                    64
+    port.o                   224        1        4
+    portasm.o                124
+    queue.o                1 560                64
+    recmutex.o               484                48
+    startup_stm32f0xx.o      306
+    stm320518_eval.o         282                20
+    stm32f0xx_gpio.o         138
+    stm32f0xx_rcc.o          348        1       16
+    stm32f0xx_usart.o        214
+    system_stm32f0xx.o       240                20
+    tasks.o                2 368               260
+    timers.o                 888                60
+    ----------------------------------------------
+    Total:                10 346      186    6 652
+
+command line: [2]
+    ----------------------------------------------
+    Total:
+
+dl6M_tlf.a: [3]
+    abort.o                   10
+    div.o                     32
+    exit.o                     8
+    localeconv.o             104        4      136
+    low_level_init.o           4
+    printf.o                  36
+    putchar.o                 16
+    setlocale.o               20        4      116
+    xencoding_sb.o            80
+    xfiles.o                            2      144
+    xgetmemchunk.o            44                 4
+    xmbcurmax.o               10
+    xmbtowc.o                 28
+    xprintffull.o          4 810       40
+    xprout.o                  22
+    xtls.o                     2
+    xwctomb.o                 24
+    xxmemxfree.o             136
+    xxmemxmalloc.o           184                 8
+    ----------------------------------------------
+    Total:                 5 570       50      408
+
+m6M_tl.a: [4]
+    DblAddSub.o              424
+    DblCmpGe.o                50
+    DblCmpLe.o                50
+    DblDiv.o                 194
+    DblMul.o                 388
+    DblToI32.o                82
+    I32ToDbl.o                52
+    xdnorm.o                  68
+    xdscale.o                284
+    ----------------------------------------------
+    Total:                 1 592
+
+rt6M_tl.a: [5]
+    ABImemcpy.o               92
+    ABImemset.o               64
+    I32DivModFast.o          224
+    I64DivMod.o              106
+    I64DivZer.o                2
+    IntDivZer.o                2
+    cexit.o                   10
+    cmain.o                   26
+    cstartup_M.o              12
+    data_init.o               40
+    memchr.o                  24
+    packbits_init.o          216
+    strchr.o                  20
+    strlen.o                  16
+    zero_init3.o              60
+    ----------------------------------------------
+    Total:                   914
+
+shb_l.a: [6]
+    exit.o                    20
+    ----------------------------------------------
+    Total:                    20
+
+    Linker created                     44    1 024
+--------------------------------------------------
+    Grand Total:          18 442      280    8 084
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address    Size  Type      Object
+-----                      -------    ----  ----      ------
+.iar.init_table$$Base   0x080047a4           --   Gb  - Linker created -
+.iar.init_table$$Limit  0x080047d0           --   Gb  - Linker created -
+?main                   0x080047d1          Code  Gb  cmain.o [5]
+AHBPrescTable           0x200018c4    0x10  Data  Gb  system_stm32f0xx.o [1]
+APBAHBPrescTable        0x200018d8    0x10  Data  Lc  stm32f0xx_rcc.o [1]
+COM_RX_AF               0x080037c0     0x2  Data  Gb  stm320518_eval.o [1]
+COM_RX_PIN              0x080037b0     0x2  Data  Gb  stm320518_eval.o [1]
+COM_RX_PIN_SOURCE       0x080037b8     0x2  Data  Gb  stm320518_eval.o [1]
+COM_RX_PORT             0x200018f0     0x4  Data  Gb  stm320518_eval.o [1]
+COM_RX_PORT_CLK         0x080037a8     0x4  Data  Gb  stm320518_eval.o [1]
+COM_TX_AF               0x080037bc     0x2  Data  Gb  stm320518_eval.o [1]
+COM_TX_PIN              0x080037ac     0x2  Data  Gb  stm320518_eval.o [1]
+COM_TX_PIN_SOURCE       0x080037b4     0x2  Data  Gb  stm320518_eval.o [1]
+COM_TX_PORT             0x200018ec     0x4  Data  Gb  stm320518_eval.o [1]
+COM_TX_PORT_CLK         0x080037a4     0x4  Data  Gb  stm320518_eval.o [1]
+COM_USART               0x200018e8     0x4  Data  Gb  stm320518_eval.o [1]
+COM_USART_CLK           0x080037a0     0x4  Data  Gb  stm320518_eval.o [1]
+CSTACK$$Base            0x20001b98           --   Gb  - Linker created -
+CSTACK$$Limit           0x20001f98           --   Gb  - Linker created -
+GPIO_CLK                0x080036e4     0x8  Data  Gb  stm320518_eval.o [1]
+GPIO_Init               0x0800437d    0x6a  Code  Gb  stm32f0xx_gpio.o [1]
+GPIO_PIN                0x08003700     0x4  Data  Gb  stm320518_eval.o [1]
+GPIO_PORT               0x200018f4     0x8  Data  Gb  stm320518_eval.o [1]
+GPIO_PinAFConfig        0x080043e7    0x20  Code  Gb  stm32f0xx_gpio.o [1]
+HEAP$$Base              0x20001f98           --   Gb  - Linker created -
+HEAP$$Limit             0x20001f98           --   Gb  - Linker created -
+InStream_Read           0x080045ed    0x22  Code  Lc  packbits_init.o [5]
+LoadInt                 0x0800071f    0x68  Code  Lc  xprintffull.o [3]
+PendSV_Handler          0x08002de3          Code  Gb  portasm.o [1]
+RCC_AHBPeriphClockCmd   0x08004339    0x14  Code  Gb  stm32f0xx_rcc.o [1]
+RCC_APB2PeriphClockCmd  0x0800434d    0x14  Code  Gb  stm32f0xx_rcc.o [1]
+RCC_GetClocksFreq       0x08004221   0x114  Code  Gb  stm32f0xx_rcc.o [1]
+Region$$Table$$Base     0x080047a4           --   Gb  - Linker created -
+Region$$Table$$Limit    0x080047d0           --   Gb  - Linker created -
+STM_EVAL_COMInit        0x08003705    0x94  Code  Gb  stm320518_eval.o [1]
+STM_EVAL_LEDInit        0x080036a9    0x3c  Code  Gb  stm320518_eval.o [1]
+STM_EVAL_LEDToggle      0x080036ed    0x14  Code  Gb  stm320518_eval.o [1]
+SVC_Handler             0x08002e21          Code  Gb  portasm.o [1]
+SysTick_Handler         0x080029ed    0x20  Code  Gb  port.o [1]
+SystemCoreClock         0x200018d4     0x4  Data  Gb  system_stm32f0xx.o [1]
+SystemInit              0x080044fd    0xd0  Code  Gb  system_stm32f0xx.o [1]
+USART_Cmd               0x0800387b    0x16  Code  Gb  stm32f0xx_usart.o [1]
+USART_GetFlagStatus     0x080038b1     0xe  Code  Gb  stm32f0xx_usart.o [1]
+USART_Init              0x080037e9    0x92  Code  Gb  stm32f0xx_usart.o [1]
+USART_SendData          0x08003891     0x8  Code  Gb  stm32f0xx_usart.o [1]
+_EncodingSb_Mbtowc      0x08001dd9    0x2c  Code  Gb  xencoding_sb.o [3]
+_EncodingSb_Wctomb      0x08001dc5    0x14  Code  Gb  xencoding_sb.o [3]
+_GenldFull              0x08001085   0x2d4  Code  Lc  xprintffull.o [3]
+_IsdstStr               0x20001814     0x4  Data  Gb  setlocale.o [3]
+_LdtobFull              0x08000bf1   0x480  Code  Lc  xprintffull.o [3]
+_LitobFull              0x08000abd   0x12e  Code  Lc  xprintffull.o [3]
+_LocaleEncoding         0x08001db1     0xc  Code  Gb  setlocale.o [3]
+_LocaleReturnString     0x20001834    0x50  Data  Lc  setlocale.o [3]
+_Locale_Profile         0x20001818    0x1c  Data  Gb  setlocale.o [3]
+_Locale_aeabi_lconv     0x200017d8    0x38  Data  Gb  localeconv.o [3]
+_Locale_lconv           0x20001788    0x50  Data  Gb  localeconv.o [3]
+_Mbtowc                 0x0800138b    0x1c  Code  Gb  xmbtowc.o [3]
+_PrintfFull             0x080000c1   0x65e  Code  Gb  xprintffull.o [3]
+_Prout                  0x08004803    0x16  Code  Gb  xprout.o [3]
+_PutcharsFull           0x0800135b    0x30  Code  Lc  xprintffull.o [3]
+_PutstrFull             0x08000789   0x334  Code  Lc  xprintffull.o [3]
+_TzoneStr               0x20001810     0x4  Data  Gb  setlocale.o [3]
+_Wctomb                 0x080014a5    0x18  Code  Gb  xwctomb.o [3]
+__ICFEDIT_region_RAM_end__ {Abs}
+                        0x20001fff           --   Gb  command line/config [2]
+__ICFEDIT_region_RAM_start__ {Abs}
+                        0x20000000           --   Gb  command line/config [2]
+__aeabi_cdcmple         0x0800164f          Code  Gb  DblCmpLe.o [4]
+__aeabi_cdrcmple        0x08001681          Code  Gb  DblCmpGe.o [4]
+__aeabi_d2iz            0x080017d1          Code  Gb  DblToI32.o [4]
+__aeabi_d2uiz           0x080017f5          Code  Gb  DblToI32.o [4]
+__aeabi_ddiv            0x08001c65          Code  Gb  DblDiv.o [4]
+__aeabi_dmul            0x08001ae1          Code  Gb  DblMul.o [4]
+__aeabi_dsub            0x08001913          Code  Gb  DblAddSub.o [4]
+__aeabi_i2d             0x08001825          Code  Gb  I32ToDbl.o [4]
+__aeabi_idiv            0x08001a2d          Code  Gb  I32DivModFast.o [5]
+__aeabi_idiv0           0x08001e45          Code  Gb  IntDivZer.o [5]
+__aeabi_idivmod         0x08001a2d          Code  Gb  I32DivModFast.o [5]
+__aeabi_ldiv0           0x08001e41          Code  Gb  I64DivZer.o [5]
+__aeabi_memcpy          0x080014bd          Code  Gb  ABImemcpy.o [5]
+__aeabi_memset4         0x08002871          Code  Gb  ABImemset.o [5]
+__aeabi_memset8         0x08002871          Code  Gb  ABImemset.o [5]
+__aeabi_ui2d            0x08001839          Code  Gb  I32ToDbl.o [4]
+__aeabi_uidiv           0x08001a33          Code  Gb  I32DivModFast.o [5]
+__aeabi_uidivmod        0x08001a33          Code  Gb  I32DivModFast.o [5]
+__aeabi_uldivmod        0x080015a1          Code  Gb  I64DivMod.o [5]
+__cmain                 0x080047d1          Code  Gb  cmain.o [5]
+__data_Aldata           0x20001b7c     0x8  Data  Gb  xxmemxmalloc.o [3]
+__data_GetMemChunk      0x08001e15    0x2c  Code  Gb  xgetmemchunk.o [3]
+__exit                  0x080046d1    0x14  Code  Gb  exit.o [6]
+__iar_Dnorm             0x0800160b    0x44  Code  Gb  xdnorm.o [4]
+__iar_Dscale            0x080016b5   0x11c  Code  Gb  xdscale.o [4]
+__iar_Locale_lconv_init
+                        0x08001d29    0x32  Code  Gb  localeconv.o [3]
+__iar_Mbcurmax          0x080013e3     0xa  Code  Gb  xmbcurmax.o [3]
+__iar_Memchr            0x080013cb    0x18  Code  Gb  memchr.o [5]
+__iar_Memset4_word      0x0800287d          Code  Gb  ABImemset.o [5]
+__iar_Stdout            0x20001884    0x40  Data  Gb  xfiles.o [3]
+__iar_Strchr            0x080013a7    0x14  Code  Gb  strchr.o [5]
+__iar_d2uiz             0x080017f9          Code  Gb  DblToI32.o [4]
+__iar_data_init3        0x0800477d    0x28  Code  Gb  data_init.o [5]
+__iar_dlib_perthread_access
+                        0x08001e47     0x2  Code  Gb  xtls.o [3]
+__iar_packbits_init3    0x0800460f    0xb6  Code  Gb  packbits_init.o [5]
+__iar_program_start     0x08004829          Code  Gb  cstartup_M.o [5]
+__iar_ui2d              0x0800183d          Code  Gb  I32ToDbl.o [4]
+__iar_zero_init3        0x080046e5    0x3c  Code  Gb  zero_init3.o [5]
+__low_level_init        0x080047eb     0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x08000000          Data  Gb  startup_stm32f0xx.o [1]
+_call_main              0x080047dd          Code  Gb  cmain.o [5]
+_exit                   0x080047f9          Code  Gb  cexit.o [5]
+_main                   0x080047e7          Code  Gb  cmain.o [5]
+abort                   0x080046c5     0xa  Code  Gb  abort.o [3]
+clk_count               0x20001b84     0x4  Data  Gb  ParTest.o [1]
+div                     0x08001d91    0x20  Code  Gb  div.o [3]
+exit                    0x080047ef     0x8  Code  Gb  exit.o [3]
+fputc                   0x080034c3    0x1e  Code  Gb  ParTest.o [1]
+free                    0x08001519    0x82  Code  Gb  xxmemxfree.o [3]
+localeconv              0x08001d5b    0x18  Code  Gb  localeconv.o [3]
+main                    0x08002d9d     0xe  Code  Gb  main.o [1]
+main_full               0x08003539    0xa0  Code  Gb  main-full.o [1]
+malloc                  0x080013ed    0xb2  Code  Gb  xxmemxmalloc.o [3]
+obuf                    0x20001a04    0x50  Data  Lc  xfiles.o [3]
+printf                  0x080037c5    0x24  Code  Gb  printf.o [3]
+prvAddCurrentTaskToDelayedList
+                        0x08002721    0x5c  Code  Lc  tasks.o [1]
+prvAddNewTaskToReadyList
+                        0x08001f27    0xb4  Code  Lc  tasks.o [1]
+prvCheckForValidListAndQueue
+                        0x08002d29    0x48  Code  Lc  timers.o [1]
+prvCheckTimerCallback   0x080035d9    0x84  Code  Lc  main-full.o [1]
+prvCopyDataFromQueue    0x08003361    0x26  Code  Lc  queue.o [1]
+prvCopyDataToQueue      0x080032f1    0x70  Code  Lc  queue.o [1]
+prvCountingSemaphoreTask
+                        0x08003d51    0x3e  Code  Lc  countsem.o [1]
+prvDecrementSemaphoreCount
+                        0x08003c85    0x6a  Code  Lc  countsem.o [1]
+prvDeleteTCB            0x080025f1    0x12  Code  Lc  tasks.o [1]
+prvFlashTimerCallback   0x08003675     0xc  Code  Lc  main-full.o [1]
+prvIdleTask             0x08002595    0x52  Code  Lc  tasks.o [1]
+prvIncrementSemaphoreCount
+                        0x08003cf1    0x58  Code  Lc  countsem.o [1]
+prvInitialiseNewQueue   0x08002f09    0x20  Code  Lc  queue.o [1]
+prvInitialiseNewTask    0x08001e99    0x8e  Code  Lc  tasks.o [1]
+prvInitialiseNewTimer   0x08002a89    0x30  Code  Lc  timers.o [1]
+prvInsertTimerInActiveList
+                        0x08002be3    0x34  Code  Lc  timers.o [1]
+prvIsQueueEmpty         0x080033f3    0x12  Code  Lc  queue.o [1]
+prvProcessExpiredTimer  0x08002b05    0x4e  Code  Lc  timers.o [1]
+prvProcessReceivedCommands
+                        0x08002c19    0xaa  Code  Lc  timers.o [1]
+prvRecursiveMutexBlockingTask
+                        0x08003eb3    0x4a  Code  Lc  recmutex.o [1]
+prvRecursiveMutexControllingTask
+                        0x08003e4f    0x64  Code  Lc  recmutex.o [1]
+prvRecursiveMutexPollingTask
+                        0x08003efd    0x6a  Code  Lc  recmutex.o [1]
+prvResetNextTaskUnblockTime
+                        0x08002603    0x1e  Code  Lc  tasks.o [1]
+prvSampleTimeNow        0x08002bbf    0x24  Code  Lc  timers.o [1]
+prvSwitchTimerLists     0x08002ccd    0x5c  Code  Lc  timers.o [1]
+prvTaskExitError        0x08002961    0x14  Code  Lc  port.o [1]
+prvTaskIsTaskSuspended  0x0800218d    0x2a  Code  Lc  tasks.o [1]
+prvTimerTask            0x08002b53    0x6c  Code  Lc  timers.o [1]
+prvUnlockQueue          0x08003387    0x6c  Code  Lc  queue.o [1]
+putchar                 0x08004819    0x10  Code  Gb  putchar.o [3]
+pvPortMalloc            0x08002789    0xae  Code  Gb  heap_2.o [1]
+pvTaskIncrementMutexHeldCount
+                        0x08002705    0x14  Code  Gb  tasks.o [1]
+pvTimerGetTimerID       0x08002d79    0x14  Code  Gb  timers.o [1]
+pxCurrentTCB            0x20001900     0x4  Data  Gb  tasks.o [1]
+pxCurrentTimerList      0x20001a94     0x4  Data  Lc  timers.o [1]
+pxDelayedTaskList       0x20001968     0x4  Data  Lc  tasks.o [1]
+pxOverflowDelayedTaskList
+                        0x2000196c     0x4  Data  Lc  tasks.o [1]
+pxOverflowTimerList     0x20001a98     0x4  Data  Lc  timers.o [1]
+pxPortInitialiseStack   0x08002945    0x1c  Code  Gb  port.o [1]
+pxReadyTasksLists       0x20001904    0x64  Data  Lc  tasks.o [1]
+strlen                  0x080013bb    0x10  Code  Gb  strlen.o [5]
+time_dat                0x20001b88     0x4  Data  Gb  ParTest.o [1]
+ucHeap                  0x20000018  0x1770  Data  Lc  heap_2.o [1]
+ulCounter               0x20001b08     0x4  Data  Lc  dynamic.o [1]
+ulExpectedValue         0x20001b18     0x4  Data  Lc  dynamic.o [1]
+ulRegTest1LoopCounter   0x20001b68     0x4  Data  Gb  main-full.o [1]
+ulRegTest2LoopCounter   0x20001b6c     0x4  Data  Gb  main-full.o [1]
+ulSetInterruptMaskFromISR
+                        0x08002e45          Code  Gb  portasm.o [1]
+usCheckVariable         0x20001afc     0x2  Data  Lc  dynamic.o [1]
+uxBlockingCycles        0x20001ae0     0x4  Data  Lc  recmutex.o [1]
+uxControllingCycles     0x20001adc     0x4  Data  Lc  recmutex.o [1]
+uxCriticalNesting       0x200018fc     0x4  Data  Lc  port.o [1]
+uxCurrentNumberOfTasks  0x20001974     0x4  Data  Lc  tasks.o [1]
+uxDeletedTasksWaitingCleanUp
+                        0x20001970     0x4  Data  Lc  tasks.o [1]
+uxListRemove            0x08002921    0x24  Code  Gb  list.o [1]
+uxPendedTicks           0x200019f0     0x4  Data  Lc  tasks.o [1]
+uxPollingCycles         0x20001ae4     0x4  Data  Lc  recmutex.o [1]
+uxQueueMessagesWaiting  0x080032d5    0x14  Code  Gb  queue.o [1]
+uxSchedulerSuspended    0x20001980     0x4  Data  Lc  tasks.o [1]
+uxTaskNumber            0x200019f8     0x4  Data  Lc  tasks.o [1]
+uxTaskPriorityGet       0x08002065    0x1a  Code  Gb  tasks.o [1]
+uxTopReadyPriority      0x20001978     0x4  Data  Lc  tasks.o [1]
+vApplicationMallocFailedHook
+                        0x08002dad     0x4  Code  Gb  main.o [1]
+vApplicationStackOverflowHook
+                        0x08002db1     0x4  Code  Gb  main.o [1]
+vApplicationTickHook    0x08002db5    0x20  Code  Gb  main.o [1]
+vClearInterruptMaskFromISR
+                        0x08002e4d          Code  Gb  portasm.o [1]
+vContinuousIncrementTask
+                        0x08004079    0x40  Code  Lc  dynamic.o [1]
+vCounterControlTask     0x080040b9    0x68  Code  Lc  dynamic.o [1]
+vCreateBlockTimeTasks   0x080038c1    0x46  Code  Gb  blocktim.o [1]
+vLimitedIncrementTask   0x08004063    0x16  Code  Lc  dynamic.o [1]
+vListInitialise         0x080028b1    0x1e  Code  Gb  list.o [1]
+vListInitialiseItem     0x080028cf     0x6  Code  Gb  list.o [1]
+vListInsert             0x080028ed    0x34  Code  Gb  list.o [1]
+vListInsertEnd          0x080028d5    0x18  Code  Gb  list.o [1]
+vParTestInitialise      0x08003471    0x36  Code  Gb  ParTest.o [1]
+vParTestToggleLED       0x080034a9    0x1a  Code  Gb  ParTest.o [1]
+vPortEnterCritical      0x080029bd     0xc  Code  Gb  port.o [1]
+vPortExitCritical       0x080029d5    0x18  Code  Gb  port.o [1]
+vPortFree               0x08002837    0x32  Code  Gb  heap_2.o [1]
+vPortStartFirstTask     0x08002e23          Code  Gb  portasm.o [1]
+vPortYield              0x080029b1     0xa  Code  Gb  port.o [1]
+vPrimaryBlockTimeTestTask
+                        0x08003907   0x232  Code  Lc  blocktim.o [1]
+vQueueAddToRegistry     0x08003407    0x1e  Code  Gb  queue.o [1]
+vQueueReceiveWhenSuspendedTask
+                        0x08004151    0x46  Code  Lc  dynamic.o [1]
+vQueueSendWhenSuspendedTask
+                        0x08004121    0x30  Code  Lc  dynamic.o [1]
+vQueueWaitForMessageRestricted
+                        0x08003429    0x48  Code  Gb  queue.o [1]
+vRegTest1Task           0x08004409          Code  Gb  RegTest.o [1]
+vRegTest2Task           0x0800447f          Code  Gb  RegTest.o [1]
+vSecondaryBlockTimeTestTask
+                        0x08003b39    0x7a  Code  Lc  blocktim.o [1]
+vSetMSP                 0x08002ddd          Code  Gb  portasm.o [1]
+vStartCountingSemaphoreTasks
+                        0x08003c15    0x6e  Code  Gb  countsem.o [1]
+vStartDynamicPriorityTasks
+                        0x08003fdd    0x86  Code  Gb  dynamic.o [1]
+vStartRecursiveMutexTasks
+                        0x08003df9    0x56  Code  Gb  recmutex.o [1]
+vTaskDelay              0x08002039    0x2c  Code  Gb  tasks.o [1]
+vTaskDelayUntil         0x08001fdd    0x5a  Code  Gb  tasks.o [1]
+vTaskMissedYield        0x0800258d     0x8  Code  Gb  tasks.o [1]
+vTaskPlaceOnEventList   0x0800246d    0x18  Code  Gb  tasks.o [1]
+vTaskPlaceOnEventListRestricted
+                        0x08002495    0x2a  Code  Gb  tasks.o [1]
+vTaskPriorityInherit    0x08002643    0x5e  Code  Gb  tasks.o [1]
+vTaskPrioritySet        0x08002085    0x8c  Code  Gb  tasks.o [1]
+vTaskResume             0x080021b9    0x54  Code  Gb  tasks.o [1]
+vTaskSetTimeOutState    0x08002521    0x14  Code  Gb  tasks.o [1]
+vTaskStartScheduler     0x08002211    0x44  Code  Gb  tasks.o [1]
+vTaskSuspend            0x08002115    0x78  Code  Gb  tasks.o [1]
+vTaskSuspendAll         0x0800225d     0xa  Code  Gb  tasks.o [1]
+vTaskSwitchContext      0x080023f9    0x74  Code  Gb  tasks.o [1]
+xActiveTimerList1       0x20001aa4    0x14  Data  Lc  timers.o [1]
+xActiveTimerList2       0x20001ab8    0x14  Data  Lc  timers.o [1]
+xAreBlockTimeTestTasksStillRunning
+                        0x08003bb9    0x2c  Code  Gb  blocktim.o [1]
+xAreCountingSemaphoreTasksStillRunning
+                        0x08003d8f    0x30  Code  Gb  countsem.o [1]
+xAreDynamicPriorityTasksStillRunning
+                        0x08004197    0x32  Code  Gb  dynamic.o [1]
+xAreRecursiveMutexTasksStillRunning
+                        0x08003f67    0x3e  Code  Gb  recmutex.o [1]
+xBlockingIsSuspended    0x20001ad8     0x4  Data  Lc  recmutex.o [1]
+xBlockingTaskHandle     0x20001aec     0x4  Data  Lc  recmutex.o [1]
+xContinuousIncrementHandle
+                        0x20001b00     0x4  Data  Lc  dynamic.o [1]
+xControllingIsSuspended
+                        0x20001ad4     0x4  Data  Lc  recmutex.o [1]
+xControllingTaskHandle  0x20001ae8     0x4  Data  Lc  recmutex.o [1]
+xDelayedTaskList1       0x20001984    0x14  Data  Lc  tasks.o [1]
+xDelayedTaskList2       0x20001998    0x14  Data  Lc  tasks.o [1]
+xEnd                    0x20000008     0x8  Data  Lc  heap_2.o [1]
+xErrorDetected          0x20001b3c     0x4  Data  Lc  countsem.o [1]
+xErrorOccurred          0x20001b58     0x4  Data  Lc  blocktim.o [1]
+xErrorOccurred          0x20001ad0     0x4  Data  Lc  recmutex.o [1]
+xFreeBytesRemaining     0x20000010     0x4  Data  Lc  heap_2.o [1]
+xIdleTaskHandle         0x20001a00     0x4  Data  Lc  tasks.o [1]
+xLEDs                   0x08003534     0x2  Data  Lc  ParTest.o [1]
+xLimitedIncrementHandle
+                        0x20001b04     0x4  Data  Lc  dynamic.o [1]
+xMutex                  0x20001acc     0x4  Data  Lc  recmutex.o [1]
+xNextTaskUnblockTime    0x200019fc     0x4  Data  Lc  tasks.o [1]
+xNumOfOverflows         0x200019f4     0x4  Data  Lc  tasks.o [1]
+xParameters             0x20001b24    0x18  Data  Lc  countsem.o [1]
+xPendingReadyList       0x200019ac    0x14  Data  Lc  tasks.o [1]
+xPortStartScheduler     0x08002975    0x3c  Code  Gb  port.o [1]
+xPrimaryCycles          0x20001b50     0x4  Data  Lc  blocktim.o [1]
+xQueueCreateCountingSemaphore
+                        0x08002fc1    0x24  Code  Gb  queue.o [1]
+xQueueCreateMutex       0x08002f29    0x28  Code  Gb  queue.o [1]
+xQueueGenericCreate     0x08002ed1    0x38  Code  Gb  queue.o [1]
+xQueueGenericReceive    0x08003199   0x13a  Code  Gb  queue.o [1]
+xQueueGenericReset      0x08002e59    0x76  Code  Gb  queue.o [1]
+xQueueGenericSend       0x08002fe5   0x120  Code  Gb  queue.o [1]
+xQueueGenericSendFromISR
+                        0x08003105    0x88  Code  Gb  queue.o [1]
+xQueueGiveMutexRecursive
+                        0x08002f51    0x32  Code  Gb  queue.o [1]
+xQueueRegistry          0x20001a54    0x40  Data  Gb  queue.o [1]
+xQueueTakeMutexRecursive
+                        0x08002f85    0x3a  Code  Gb  queue.o [1]
+xRunIndicator           0x20001b5c     0x4  Data  Lc  blocktim.o [1]
+xSchedulerRunning       0x200019ec     0x4  Data  Lc  tasks.o [1]
+xSecondary              0x20001b4c     0x4  Data  Lc  blocktim.o [1]
+xSecondaryCycles        0x20001b54     0x4  Data  Lc  blocktim.o [1]
+xStart                  0x20000000     0x8  Data  Lc  heap_2.o [1]
+xSuspendedQueueReceiveError
+                        0x20001b10     0x4  Data  Lc  dynamic.o [1]
+xSuspendedQueueSendError
+                        0x20001b0c     0x4  Data  Lc  dynamic.o [1]
+xSuspendedTaskList      0x200019d4    0x14  Data  Lc  tasks.o [1]
+xSuspendedTestQueue     0x20001b14     0x4  Data  Gb  dynamic.o [1]
+xTaskCheckForTimeOut    0x08002535    0x58  Code  Gb  tasks.o [1]
+xTaskCreate             0x08001e49    0x50  Code  Gb  tasks.o [1]
+xTaskGetCurrentTaskHandle
+                        0x08002621     0x6  Code  Gb  tasks.o [1]
+xTaskGetSchedulerState  0x08002627    0x1c  Code  Gb  tasks.o [1]
+xTaskGetTickCount       0x08002311     0x6  Code  Gb  tasks.o [1]
+xTaskIncrementTick      0x08002321    0xce  Code  Gb  tasks.o [1]
+xTaskPriorityDisinherit
+                        0x080026a9    0x5c  Code  Gb  tasks.o [1]
+xTaskRemoveFromEventList
+                        0x080024c1    0x5c  Code  Gb  tasks.o [1]
+xTaskResumeAll          0x0800226d    0xa4  Code  Gb  tasks.o [1]
+xTasksWaitingTermination
+                        0x200019c0    0x14  Data  Lc  tasks.o [1]
+xTestQueue              0x20001b48     0x4  Data  Lc  blocktim.o [1]
+xTickCount              0x200019e8     0x4  Data  Lc  tasks.o [1]
+xTimerCreate            0x08002a5d    0x2a  Code  Gb  timers.o [1]
+xTimerCreateTimerTask   0x08002a25    0x2e  Code  Gb  timers.o [1]
+xTimerGenericCommand    0x08002ab9    0x4c  Code  Gb  timers.o [1]
+xTimerQueue             0x20001a9c     0x4  Data  Lc  timers.o [1]
+xTimerTaskHandle        0x20001aa0     0x4  Data  Lc  timers.o [1]
+xYieldPending           0x2000197c     0x4  Data  Lc  tasks.o [1]
+
+
+[1] = E:\BaiduNetdiskDownload\OneNET开发板--资料、软件下载\资料\RTOS资料\FreeRTOS\FreeRTOSv9.0.0\FreeRTOS\Demo\CORTEX_M0_STM32F0518_IAR\Debug\Obj
+[2] = command line
+[3] = dl6M_tlf.a
+[4] = m6M_tl.a
+[5] = rt6M_tl.a
+[6] = shb_l.a
+
+  18 442 bytes of readonly  code memory
+     280 bytes of readonly  data memory
+   8 084 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
